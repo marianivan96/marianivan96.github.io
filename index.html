@@ -754,23 +754,25 @@
       <div class="project-arrow">↗</div>
     </a>
 
-    <div class="project-card fade-up" style="cursor: default;">
+
+    <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <div class="project-number">03</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#f59e0b; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.25); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">IN PROGRESS</span>
+        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
       </div>
-      <div class="project-title">Media Buy Budget Automation</div>
+      <div class="project-title">HubSpot Duplicate Contact Audit</div>
       <p class="project-desc">
-        Automates the planning and pacing of paid media budgets across channels — pulling spend data, flagging over/underpacing, and generating reallocation recommendations. Designed for agencies managing multiple clients without a dedicated ops team.
+        Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.
       </p>
-      <div class="project-outcome" style="border-color: rgba(245,158,11,0.3); color: #f59e0b; background: rgba(245,158,11,0.06);">→ Multi-channel · auto pacing alerts · budget reallocation</div>
+      <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
       <div class="project-tags">
         <span class="tag">Python</span>
-        <span class="tag">Google Ads API</span>
-        <span class="tag">Meta API</span>
-        <span class="tag">n8n</span>
+        <span class="tag">HubSpot API</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">CRM</span>
       </div>
-    </div>
+      <div class="project-arrow">↗</div>
+    </a>
 
   </div>
 </section>
@@ -823,11 +825,11 @@
 
   <div class="stack-grid fade-up">
     <div class="stack-group">
-      <div class="stack-group-title">Data Analysis</div>
+      <div class="stack-group-title">Data & Analysis</div>
       <div class="stack-items">
         <div class="stack-item">Python (Pandas, Matplotlib)</div>
         <div class="stack-item">SQL & BigQuery</div>
-        <div class="stack-item">Google Suite</div>
+        <div class="stack-item">Google Sheets / Excel</div>
         <div class="stack-item">Looker Studio</div>
       </div>
     </div>
@@ -942,9 +944,9 @@
 </footer>
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
