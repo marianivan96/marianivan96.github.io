@@ -32,7 +32,6 @@
     overflow-x: hidden;
   }
 
-  /* ── GRAIN OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +42,6 @@
     opacity: 0.5;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -84,7 +82,6 @@
 
   .nav-links a:hover { color: var(--accent); }
 
-  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -190,7 +187,6 @@
     color: var(--paper);
   }
 
-  /* Hero right — stats + decorative */
   .hero-right {
     display: flex;
     flex-direction: column;
@@ -246,7 +242,6 @@
     margin-top: 2px;
   }
 
-  /* ── SECTION COMMON ── */
   section {
     padding: 96px 48px;
   }
@@ -287,7 +282,6 @@
     margin-bottom: 56px;
   }
 
-  /* ── PROJECTS ── */
   #projects {
     background: var(--ink);
     color: var(--paper);
@@ -379,7 +373,6 @@
 
   .project-card:hover .project-arrow { transform: translate(4px, -4px); }
 
-  /* ── SERVICES ── */
   #services {
     background: var(--paper);
   }
@@ -422,7 +415,6 @@
     line-height: 1.7;
   }
 
-  /* ── STACK ── */
   #stack {
     background: #f9f7f2;
     border-top: 1px solid var(--border);
@@ -473,7 +465,6 @@
     font-size: 11px;
   }
 
-  /* ── ABOUT ── */
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -531,7 +522,6 @@
     margin-top: 2px;
   }
 
-  /* About right — currently available */
   .available-badge {
     display: inline-flex;
     align-items: center;
@@ -597,7 +587,6 @@
     width: 20px;
   }
 
-  /* ── FOOTER ── */
   footer {
     background: var(--ink);
     border-top: 1px solid #2a2a2a;
@@ -620,7 +609,6 @@
     letter-spacing: 0.05em;
   }
 
-  /* ── ANIMATIONS ── */
   .fade-up {
     opacity: 0;
     transform: translateY(24px);
@@ -632,7 +620,6 @@
     transform: translateY(0);
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
@@ -652,7 +639,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Marian Ivan</a>
   <ul class="nav-links">
@@ -664,7 +650,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Data & Automation</div>
@@ -709,7 +694,6 @@
   </div>
 </div>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Work</div>
   <h2>Projects that ship.</h2>
@@ -754,7 +738,6 @@
       <div class="project-arrow">↗</div>
     </a>
 
-
     <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <div class="project-number">03</div>
@@ -794,7 +777,7 @@
       <div class="project-arrow">↗</div>
     </a>
 
-    <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up" style="grid-column: 1 / -1;">
+    <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <div class="project-number">05</div>
         <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
@@ -815,10 +798,31 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div class="project-number">06</div>
+        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+      </div>
+      <div class="project-title">Social Intelligence Engine</div>
+      <p class="project-desc">
+        Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations. Includes a live dashboard and Flask API for n8n integration.
+      </p>
+      <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Claude AI</span>
+        <span class="tag">Apify</span>
+        <span class="tag">Flask</span>
+        <span class="tag">n8n</span>
+        <span class="tag">RSS</span>
+        <span class="tag">LinkedIn Scraping</span>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="section-label">Services</div>
   <h2>What I do for clients.</h2>
@@ -858,7 +862,6 @@
   </div>
 </section>
 
-<!-- STACK -->
 <section id="stack">
   <div class="section-label">Stack</div>
   <h2>Tools I work with.</h2>
@@ -893,18 +896,17 @@
       </div>
     </div>
     <div class="stack-group">
-      <div class="stack-group-title">Design & Other</div>
+      <div class="stack-group-title">AI & Scraping</div>
       <div class="stack-items">
+        <div class="stack-item">Claude AI API</div>
+        <div class="stack-item">Apify</div>
         <div class="stack-item">Figma</div>
         <div class="stack-item">Photoshop</div>
-        <div class="stack-item">A/B Testing</div>
-        <div class="stack-item">SEO basics</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT + CONTACT -->
 <div id="about">
   <div class="about-left">
     <div class="section-label">Background</div>
@@ -978,7 +980,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Marian Ivan</div>
   <div class="footer-note">Data & Automation · Brussels, Belgium</div>
