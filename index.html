@@ -224,15 +224,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    opacity: 0;
-    transform: translateX(20px);
-    animation: slideIn 0.5s forwards;
   }
-
-  .stat-card:nth-child(1) { animation-delay: 0.1s; }
-  .stat-card:nth-child(2) { animation-delay: 0.25s; }
-  .stat-card:nth-child(3) { animation-delay: 0.4s; }
-  .stat-card:nth-child(4) { animation-delay: 0.55s; }
 
   @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
 
@@ -497,7 +489,7 @@
   .lifecycle-stages {
     display: flex;
     flex: 1;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .lifecycle-stage {
@@ -691,13 +683,41 @@
   .footer-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3a3a42; letter-spacing: 0.08em; text-transform: uppercase; }
 
   /* ── ANIMATIONS ── */
+  /* Elements are visible by default. JS adds .js-ready to body to enable animations. */
   .fade-up {
-    opacity: 0; transform: translateY(20px);
+    opacity: 1;
+    transform: none;
     transition: opacity 0.55s ease, transform 0.55s ease;
   }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── RESPONSIVE ── */
+  body.js-ready .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  body.js-ready .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stat cards — visible by default, slide in only when JS is active */
+  .stat-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  body.js-ready .stat-card {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.5s forwards;
+  }
+
+  body.js-ready .stat-card:nth-child(1) { animation-delay: 0.1s; }
+  body.js-ready .stat-card:nth-child(2) { animation-delay: 0.25s; }
+  body.js-ready .stat-card:nth-child(3) { animation-delay: 0.4s; }
+  body.js-ready .stat-card:nth-child(4) { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE 900px ── */
   @media (max-width: 900px) {
     nav { padding: 0 24px; }
     .nav-links { display: none; }
@@ -706,9 +726,12 @@
     .hero-right { padding: 40px 24px; }
     .projects-grid { grid-template-columns: 1fr; }
     .services-intro { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .lifecycle-stages { flex-wrap: wrap; }
-    .lifecycle-stage { flex: 1 1 45%; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .lifecycle { flex-direction: column; }
+    .lifecycle-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid var(--border); padding: 12px 20px; }
+    .lifecycle-stages { flex-wrap: wrap; overflow: visible; }
+    .lifecycle-stage { flex: 1 1 calc(50% - 1px); }
+    .lifecycle-stage::after { display: none; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
     #about { grid-template-columns: 1fr; }
     .about-left { padding: 60px 24px; border-right: none; }
@@ -716,6 +739,13 @@
     section { padding: 60px 24px; }
     .ticker-label { display: none; }
     footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  /* ── RESPONSIVE 540px ── */
+  @media (max-width: 540px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .lifecycle-stage { flex: 1 1 100%; }
+    .stack-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -729,7 +759,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="mailto:ivanmarian96@gmail.com">Contact</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#78110e191615190a111916414e381f15191114561b1715">Contact</a></li>
   </ul>
 </nav>
 
@@ -745,7 +775,7 @@
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
-      <a href="mailto:ivanmarian96@gmail.com" class="btn-secondary">Book a free audit</a>
+      <a href="/cdn-cgi/l/email-protection#f69f8097989b97849f9798cfc0b6919b979f9ad895999b" class="btn-secondary">Book a free audit</a>
     </div>
   </div>
   <div class="hero-right">
@@ -809,13 +839,6 @@
     </div>
   </div>
 </div>
-
-<style>
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-</style>
 
 <!-- PROJECTS -->
 <section id="projects">
@@ -1075,8 +1098,8 @@
 <div id="about">
   <div class="about-left">
     <div class="section-label">Background</div>
-    <h2>Six years of making data useful.</h2>
-    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM, ended up writing Python scripts to automate the work nobody else wanted to do. Based in Brussels.</p>
+    <h2>Six years of making data work.</h2>
+    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM strategy, ended up writing Python scripts to automate the work nobody else wanted to do. Six years spanning multichannel campaign management, customer lifecycle design, and data engineering — across databases of 30 million records and organisations of five people. Based in Brussels.</p>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">2026 →</div>
@@ -1095,22 +1118,15 @@
       <div class="timeline-item">
         <div class="timeline-year">2022–23</div>
         <div>
-          <div class="timeline-role">Senior CRM & Marketing Coordinator</div>
+          <div class="timeline-role">Senior CRM & Marketing Lead</div>
           <div class="timeline-company">Adore Me, Bucharest</div>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-year">2020–22</div>
+        <div class="timeline-year">2019–22</div>
         <div>
-          <div class="timeline-role">CRM Operational Coordinator</div>
+          <div class="timeline-role">CRM Coordinator</div>
           <div class="timeline-company">Adore Me, Bucharest</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2019–20</div>
-        <div>
-          <div class="timeline-role">Marketing Associate</div>
-          <div class="timeline-company">Neby Fitness</div>
         </div>
       </div>
     </div>
@@ -1123,11 +1139,11 @@
     </div>
     <div class="section-label">Contact</div>
     <h2>Let's work together.</h2>
-    <p class="section-sub">Open to project-based work — from one-off scripts to ongoing analytics partnerships. Remote or Brussels.</p>
+    <p class="section-sub">Open to project-based work — CRM strategy, multichannel campaigns, data pipelines, or all three. One-off projects or ongoing partnerships. Remote or Brussels.</p>
     <div class="contact-links">
-      <a href="mailto:ivanmarian96@gmail.com" class="contact-link">
+      <a href="/cdn-cgi/l/email-protection#79100f181714180b101817404f391e14181015571a1614" class="contact-link">
         <span class="contact-link-icon">@</span>
-        ivanmarian96@gmail.com
+        <span class="__cf_email__" data-cfemail="80e9f6e1eeede1f2e9e1eeb9b6c0e7ede1e9ecaee3efed">[email&#160;protected]</span>
       </a>
       <a href="https://github.com/marianivan96" target="_blank" class="contact-link">
         <span class="contact-link-icon">gh</span>
@@ -1147,12 +1163,4 @@
   <div class="footer-note">Data · CRM · Multichannel · Brussels</div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.j
