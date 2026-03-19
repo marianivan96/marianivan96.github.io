@@ -759,7 +759,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#78110e191615190a111916414e381f15191114561b1715">Contact</a></li>
+    <li><a href="#" class="email-link">Contact</a></li>
   </ul>
 </nav>
 
@@ -775,7 +775,7 @@
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
-      <a href="/cdn-cgi/l/email-protection#f69f8097989b97849f9798cfc0b6919b979f9ad895999b" class="btn-secondary">Book a free audit</a>
+      <a href="#" class="btn-secondary email-link">Book a free audit</a>
     </div>
   </div>
   <div class="hero-right">
@@ -1141,9 +1141,9 @@
     <h2>Let's work together.</h2>
     <p class="section-sub">Open to project-based work — CRM strategy, multichannel campaigns, data pipelines, or all three. One-off projects or ongoing partnerships. Remote or Brussels.</p>
     <div class="contact-links">
-      <a href="/cdn-cgi/l/email-protection#79100f181714180b101817404f391e14181015571a1614" class="contact-link">
+      <a href="#" class="contact-link email-link">
         <span class="contact-link-icon">@</span>
-        <span class="__cf_email__" data-cfemail="80e9f6e1eeede1f2e9e1eeb9b6c0e7ede1e9ecaee3efed">[email&#160;protected]</span>
+        <span class="email-display"></span>
       </a>
       <a href="https://github.com/marianivan96" target="_blank" class="contact-link">
         <span class="contact-link-icon">gh</span>
@@ -1163,4 +1163,30 @@
   <div class="footer-note">Data · CRM · Multichannel · Brussels</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.j
+<script>
+  // Assemble email in JS — immune to Cloudflare email obfuscation
+  const u = 'ivanmarian96';
+  const d = 'gmail' + '.' + 'com';
+  const email = u + '\u0040' + d;
+  const mailto = 'mailto:' + email;
+
+  document.querySelectorAll('.email-link').forEach(el => {
+    el.href = mailto;
+  });
+  const display = document.querySelector('.email-display');
+  if (display) display.textContent = email;
+
+  // Progressive enhancement: animations only when JS runs
+  document.body.classList.add('js-ready');
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    }),
+    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+  );
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  });
+</script>
+</body>
+</html>
