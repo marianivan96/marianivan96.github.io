@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marian Ivan — Data & Automation</title>
+<title>Marian Ivan — Data & Automation Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0d1117;
-    --paper: #f5f2eb;
-    --accent: #1a6b4a;
-    --accent2: #c8401a;
-    --muted: #6b6560;
-    --border: #d9d4c7;
-    --card: #ffffff;
-    --tag-bg: #e8f5ef;
-    --tag-color: #1a6b4a;
+    --ink:     #14120f;
+    --paper:   #faf8f4;
+    --accent:  #1a3a8f;
+    --gold:    #c8a84b;
+    --muted:   #6b6760;
+    --border:  #ddd8ce;
+    --card:    #ffffff;
+    --surface: #f4f1ea;
+    --live:    #1a7a52;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'IBM Plex Sans', sans-serif;
     background: var(--paper);
     color: var(--ink);
     font-size: 16px;
@@ -36,12 +35,13 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 1000;
-    opacity: 0.5;
+    opacity: 0.55;
   }
 
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -49,18 +49,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 48px;
-    background: rgba(245, 242, 235, 0.85);
-    backdrop-filter: blur(12px);
+    padding: 0 48px;
+    height: 64px;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
   }
 
+  nav::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+  }
+
   .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     color: var(--ink);
     text-decoration: none;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-location {
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.9;
   }
 
   .nav-links {
@@ -70,79 +92,103 @@
   }
 
   .nav-links a {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
     color: var(--muted);
     text-decoration: none;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
 
   .nav-links a:hover { color: var(--accent); }
 
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
+    padding-top: 64px;
   }
 
   .hero-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 48px 80px 48px;
+    padding: 88px 56px 88px 48px;
     border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  /* Vertical gold rule */
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 15%;
+    bottom: 15%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    opacity: 0.4;
   }
 
   .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
     font-weight: 500;
     color: var(--accent);
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
   .hero-eyebrow::before {
     content: '';
-    width: 32px;
+    width: 36px;
     height: 1px;
     background: var(--accent);
+    flex-shrink: 0;
   }
 
   h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(48px, 5vw, 72px);
-    line-height: 1.05;
-    letter-spacing: -1px;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 4.6vw, 66px);
+    line-height: 1.07;
+    letter-spacing: -0.5px;
     color: var(--ink);
     margin-bottom: 28px;
+    font-weight: 600;
   }
 
   h1 em {
     font-style: italic;
     color: var(--accent);
+    font-weight: 400;
   }
 
   .hero-desc {
-    font-size: 17px;
+    font-size: 16px;
     color: var(--muted);
-    max-width: 420px;
-    line-height: 1.7;
-    margin-bottom: 40px;
+    max-width: 440px;
+    line-height: 1.8;
+    margin-bottom: 44px;
+    font-weight: 300;
+  }
+
+  .hero-desc strong {
+    color: var(--ink);
+    font-weight: 500;
   }
 
   .hero-cta {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .btn-primary {
@@ -151,19 +197,21 @@
     gap: 8px;
     background: var(--accent);
     color: white;
-    padding: 14px 28px;
-    border-radius: 4px;
+    padding: 13px 28px;
+    border-radius: 2px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     transition: all 0.2s;
-    letter-spacing: 0.01em;
+    font-family: 'IBM Plex Mono', monospace;
   }
 
   .btn-primary:hover {
-    background: #155a3d;
+    background: #122a6e;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(26, 107, 74, 0.3);
+    box-shadow: 0 6px 20px rgba(26, 58, 143, 0.25);
   }
 
   .btn-secondary {
@@ -172,40 +220,45 @@
     gap: 8px;
     background: transparent;
     color: var(--ink);
-    padding: 14px 28px;
-    border-radius: 4px;
+    padding: 13px 28px;
+    border-radius: 2px;
     border: 1px solid var(--border);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     transition: all 0.2s;
   }
 
   .btn-secondary:hover {
-    border-color: var(--ink);
-    background: var(--ink);
-    color: var(--paper);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
+  /* ── HERO RIGHT ── */
   .hero-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 80px 48px;
-    gap: 24px;
+    padding: 88px 48px;
+    gap: 18px;
+    background: var(--surface);
   }
 
   .stat-card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px 28px;
+    border-radius: 2px;
+    padding: 20px 24px;
     display: flex;
     align-items: center;
     gap: 20px;
     opacity: 0;
     transform: translateX(20px);
     animation: slideIn 0.5s forwards;
+    border-left: 2px solid var(--gold);
   }
 
   .stat-card:nth-child(1) { animation-delay: 0.1s; }
@@ -213,138 +266,226 @@
   .stat-card:nth-child(3) { animation-delay: 0.4s; }
   .stat-card:nth-child(4) { animation-delay: 0.55s; }
 
-  @keyframes slideIn {
-    to { opacity: 1; transform: translateX(0); }
-  }
+  @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
 
   .stat-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--tag-bg);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+    width: 40px; height: 40px;
+    background: #eceaf6;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
     flex-shrink: 0;
   }
 
   .stat-number {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
     color: var(--ink);
     line-height: 1;
   }
 
   .stat-label {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
-    margin-top: 2px;
+    margin-top: 3px;
+    font-weight: 300;
   }
 
-  section {
-    padding: 96px 48px;
-  }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+  /* ── TICKER — fixed: no overflow:hidden on parent, mask edges with gradient instead ── */
+  .ticker-wrap {
+    background: var(--accent);
+    padding: 13px 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    position: relative;
+  }
+
+  /* Fade edges instead of clipping */
+  .ticker-wrap::before,
+  .ticker-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .ticker-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+  }
+  .ticker-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--accent), transparent);
+  }
+
+  .ticker-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+    padding: 0 32px;
+    flex-shrink: 0;
+    z-index: 3;
+    text-transform: uppercase;
+  }
+
+  .ticker-track-wrap {
+    flex: 1;
+    overflow: hidden;           /* clip only the scrolling track, not the whole bar */
+    min-width: 0;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+    width: max-content;
+  }
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.75);
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .ticker-item::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 96px 48px; }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   .section-label::before {
     content: '';
-    width: 24px;
+    width: 28px;
     height: 1px;
     background: var(--accent);
+    flex-shrink: 0;
   }
 
   h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 3.5vw, 48px);
-    letter-spacing: -0.5px;
-    line-height: 1.1;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 3.2vw, 44px);
+    letter-spacing: -0.3px;
+    line-height: 1.12;
     margin-bottom: 16px;
+    font-weight: 600;
   }
 
   .section-sub {
     color: var(--muted);
-    font-size: 16px;
+    font-size: 15px;
     max-width: 520px;
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 56px;
+    font-weight: 300;
   }
 
+  /* ── PROJECTS ── */
   #projects {
-    background: var(--ink);
-    color: var(--paper);
+    background: #0d1020;
+    color: #e8e6e0;
   }
 
-  #projects .section-label { color: #4ade80; }
-  #projects .section-label::before { background: #4ade80; }
-  #projects h2 { color: var(--paper); }
-  #projects .section-sub { color: #9ca3af; }
+  #projects .section-label { color: var(--gold); }
+  #projects .section-label::before { background: var(--gold); }
+  #projects h2 { color: #f0ede6; }
+  #projects .section-sub { color: #6a6860; }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
-    background: #2a2a2a;
-    border: 1px solid #2a2a2a;
-    border-radius: 12px;
+    background: #1e2030;
+    border: 1px solid #1e2030;
+    border-radius: 4px;
     overflow: hidden;
   }
 
   .project-card {
-    background: #161b22;
+    background: #131625;
     padding: 36px 32px;
-    transition: background 0.2s;
+    transition: background 0.2s, border-left-color 0.2s;
     display: flex;
     flex-direction: column;
     gap: 16px;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    border-left: 2px solid transparent;
   }
 
-  .project-card:hover { background: #1c2128; }
+  .project-card:hover {
+    background: #171b2e;
+    border-left-color: var(--gold);
+  }
 
   .project-number {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: #4ade80;
-    letter-spacing: 0.1em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    opacity: 0.6;
   }
 
   .project-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 22px;
-    color: #f0f6fc;
-    line-height: 1.2;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #f0ede6;
+    line-height: 1.25;
+    font-weight: 600;
   }
 
   .project-desc {
-    font-size: 14px;
-    color: #8b949e;
-    line-height: 1.6;
+    font-size: 13px;
+    color: #6a6860;
+    line-height: 1.75;
     flex: 1;
+    font-weight: 300;
   }
 
   .project-outcome {
-    background: rgba(74, 222, 128, 0.08);
-    border: 1px solid rgba(74, 222, 128, 0.2);
-    border-radius: 4px;
+    background: rgba(200, 168, 75, 0.07);
+    border: 1px solid rgba(200, 168, 75, 0.18);
+    border-radius: 2px;
     padding: 10px 14px;
-    font-size: 13px;
-    color: #4ade80;
-    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
   }
 
   .project-tags {
@@ -354,69 +495,132 @@
   }
 
   .tag {
-    font-family: 'DM Mono', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
-    letter-spacing: 0.05em;
-    padding: 4px 10px;
-    border-radius: 3px;
-    background: rgba(255,255,255,0.05);
-    color: #8b949e;
-    border: 1px solid rgba(255,255,255,0.08);
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.04);
+    color: #5a5850;
+    border: 1px solid rgba(255,255,255,0.06);
   }
 
   .project-arrow {
-    font-size: 18px;
-    color: #4ade80;
+    font-size: 16px;
+    color: var(--gold);
     align-self: flex-end;
     transition: transform 0.2s;
+    opacity: 0.5;
   }
 
-  .project-card:hover .project-arrow { transform: translate(4px, -4px); }
-
-  #services {
-    background: var(--paper);
+  .project-card:hover .project-arrow {
+    transform: translate(4px, -4px);
+    opacity: 1;
   }
+
+  .live-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #1a9a62;
+    background: rgba(26,154,98,0.1);
+    border: 1px solid rgba(26,154,98,0.22);
+    padding: 3px 9px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--paper); }
+
+  .services-callout {
+    background: var(--accent);
+    color: white;
+    padding: 32px 40px;
+    border-radius: 3px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .callout-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.45;
+    font-style: italic;
+    color: rgba(255,255,255,0.92);
+    max-width: 540px;
+  }
+
+  .callout-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 12px 24px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+  }
+
+  .callout-cta:hover { opacity: 0.85; }
 
   .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
   }
 
   .service-card {
     background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
     padding: 32px 28px;
-    transition: all 0.2s;
+    transition: background 0.2s, border-top-color 0.2s;
+    border-top: 2px solid transparent;
   }
 
   .service-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(26, 107, 74, 0.1);
+    background: #f7f4ef;
+    border-top-color: var(--accent);
   }
 
   .service-icon {
-    font-size: 28px;
+    font-size: 22px;
     margin-bottom: 16px;
+    display: block;
   }
 
   .service-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     margin-bottom: 10px;
     color: var(--ink);
+    font-weight: 600;
   }
 
   .service-desc {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-weight: 300;
   }
 
+  /* ── STACK ── */
   #stack {
-    background: #f9f7f2;
+    background: var(--surface);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
@@ -430,25 +634,22 @@
   .stack-group {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 24px;
+    border-top: 2px solid var(--accent);
   }
 
   .stack-group-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     font-weight: 500;
   }
 
-  .stack-items {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .stack-items { display: flex; flex-direction: column; gap: 9px; }
 
   .stack-item {
     font-size: 13px;
@@ -456,15 +657,19 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-weight: 300;
   }
 
   .stack-item::before {
-    content: '→';
-    color: var(--accent);
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    content: '—';
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    opacity: 0.8;
+    flex-shrink: 0;
   }
 
+  /* ── ABOUT / CONTACT ── */
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -472,175 +677,180 @@
     padding: 0;
   }
 
-  .about-left {
-    padding: 96px 48px;
-    border-right: 1px solid var(--border);
-  }
+  .about-left { padding: 96px 48px; border-right: 1px solid var(--border); }
 
   .about-right {
     padding: 96px 48px;
-    background: var(--ink);
-    color: var(--paper);
+    background: #0d1020;
+    color: #e8e6e0;
   }
 
-  .about-right h2 { color: var(--paper); }
+  .about-right h2 { color: #f0ede6; }
 
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 0;
     margin-top: 40px;
   }
 
   .timeline-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 84px 1fr;
     gap: 20px;
     padding: 20px 0;
     border-bottom: 1px solid var(--border);
   }
 
-  .timeline-item:last-child { border-bottom: none; }
+  .timeline-item:first-child { border-top: 1px solid var(--border); }
 
   .timeline-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
     color: var(--accent);
     padding-top: 3px;
     font-weight: 500;
+    letter-spacing: 0.05em;
   }
 
-  .timeline-role {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--ink);
-  }
-
-  .timeline-company {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
+  .timeline-role { font-weight: 500; font-size: 13px; color: var(--ink); }
+  .timeline-company { font-size: 12px; color: var(--muted); margin-top: 2px; font-weight: 300; }
 
   .available-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(74, 222, 128, 0.1);
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    border-radius: 100px;
-    padding: 8px 16px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: #4ade80;
-    letter-spacing: 0.08em;
+    background: rgba(26,154,98,0.1);
+    border: 1px solid rgba(26,154,98,0.25);
+    border-radius: 2px;
+    padding: 7px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #1a9a62;
+    letter-spacing: 0.1em;
     margin-bottom: 32px;
+    text-transform: uppercase;
   }
 
   .available-dot {
-    width: 7px;
-    height: 7px;
+    width: 6px; height: 6px;
     border-radius: 50%;
-    background: #4ade80;
+    background: #1a9a62;
     animation: pulse 2s infinite;
+    flex-shrink: 0;
   }
 
   @keyframes pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    50%       { opacity: 0.3; }
   }
 
-  .about-right .section-label { color: #4ade80; }
-  .about-right .section-label::before { background: #4ade80; }
-  .about-right .section-sub { color: #9ca3af; }
+  .about-right .section-label { color: var(--gold); }
+  .about-right .section-label::before { background: var(--gold); }
+  .about-right .section-sub { color: #6a6860; }
 
-  .contact-links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 32px;
-  }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
 
   .contact-link {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: #9ca3af;
+    gap: 14px;
+    color: #6a6860;
     text-decoration: none;
-    font-size: 14px;
-    padding: 14px 18px;
-    border: 1px solid #2a2a2a;
-    border-radius: 6px;
+    font-size: 13px;
+    padding: 13px 18px;
+    border: 1px solid #1e2030;
+    border-radius: 2px;
     transition: all 0.2s;
+    font-weight: 300;
   }
 
   .contact-link:hover {
-    color: var(--paper);
-    border-color: #4ade80;
-    background: rgba(74, 222, 128, 0.05);
+    color: #f0ede6;
+    border-color: var(--gold);
+    background: rgba(200,168,75,0.05);
   }
 
   .contact-link-icon {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: #4ade80;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
     width: 20px;
+    opacity: 0.85;
+    flex-shrink: 0;
   }
 
+  /* ── FOOTER ── */
   footer {
-    background: var(--ink);
-    border-top: 1px solid #2a2a2a;
-    padding: 32px 48px;
+    background: #0d1020;
+    border-top: 1px solid #1a1c2e;
+    padding: 28px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+  }
+
+  footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    opacity: 0.5;
   }
 
   .footer-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--paper);
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #e8e6e0;
+    font-weight: 600;
   }
 
   .footer-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: #4b5563;
-    letter-spacing: 0.05em;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: #32343f;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
+  /* ── SCROLL ANIMATIONS ── */
   .fade-up {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
   }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 0 24px; }
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 60px 24px 40px; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-left { padding: 72px 24px 40px; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-left::after { display: none; }
     .hero-right { padding: 40px 24px; }
     .projects-grid { grid-template-columns: 1fr; }
+    .services-callout { flex-direction: column; align-items: flex-start; }
     .services-grid { grid-template-columns: 1fr; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
     #about { grid-template-columns: 1fr; }
     .about-left { padding: 60px 24px; border-right: none; }
     .about-right { padding: 60px 24px; }
     section { padding: 60px 24px; }
+    .ticker-label { display: none; }
     footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
   }
 </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
-  <a href="#" class="nav-logo">Marian Ivan</a>
+  <a href="#" class="nav-logo">
+    Marian Ivan
+    <span class="nav-location">● Brussels</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
@@ -650,16 +860,17 @@
   </ul>
 </nav>
 
+<!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Data & Automation</div>
-    <h1>Turning messy<br>data into <em>clear</em><br>decisions.</h1>
+    <h1>Turning messy<br>data into <em>clear<br>decisions.</em></h1>
     <p class="hero-desc">
-      I help clients replace manual reporting with Python scripts, connect their CRM and analytics tools, and turn raw data into clear analysis — building systems that surface the right numbers, at the right time, without needing a full data team.
+      I help organisations replace manual reporting with Python scripts, connect their CRM and analytics tools, and build systems that surface the right numbers — <strong>without needing a full data team.</strong>
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
-      <a href="mailto:ivanmarian96@gmail.com" class="btn-secondary">Get in touch</a>
+      <a href="mailto:ivanmarian96@gmail.com" class="btn-secondary">Free audit call</a>
     </div>
   </div>
   <div class="hero-right">
@@ -694,6 +905,37 @@
   </div>
 </div>
 
+<!-- ── TICKER — fixed structure: label outside the scroll wrapper ── -->
+<div class="ticker-wrap">
+  <span class="ticker-label">Works with</span>
+  <div class="ticker-track-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">NGOs & Nonprofits</span>
+      <span class="ticker-item">Trade Associations</span>
+      <span class="ticker-item">Public Affairs Firms</span>
+      <span class="ticker-item">Think Tanks</span>
+      <span class="ticker-item">Impact Investors</span>
+      <span class="ticker-item">Startups & Scale-ups</span>
+      <span class="ticker-item">E-commerce Brands</span>
+      <span class="ticker-item">Advocacy Groups</span>
+      <span class="ticker-item">Consultancies</span>
+      <span class="ticker-item">Member Organisations</span>
+      <!-- duplicate set for seamless loop -->
+      <span class="ticker-item">NGOs & Nonprofits</span>
+      <span class="ticker-item">Trade Associations</span>
+      <span class="ticker-item">Public Affairs Firms</span>
+      <span class="ticker-item">Think Tanks</span>
+      <span class="ticker-item">Impact Investors</span>
+      <span class="ticker-item">Startups & Scale-ups</span>
+      <span class="ticker-item">E-commerce Brands</span>
+      <span class="ticker-item">Advocacy Groups</span>
+      <span class="ticker-item">Consultancies</span>
+      <span class="ticker-item">Member Organisations</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROJECTS ── -->
 <section id="projects">
   <div class="section-label">Work</div>
   <h2>Projects that ship.</h2>
@@ -709,20 +951,16 @@
       </p>
       <div class="project-outcome">→ 8 ecosystems · full report generated in seconds</div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">GA4 API</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Matplotlib</span>
-        <span class="tag">Google Cloud</span>
-        <span class="tag">Jinja2</span>
+        <span class="tag">Python</span><span class="tag">GA4 API</span><span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span><span class="tag">Google Cloud</span><span class="tag">Jinja2</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/reviews-sentiment-monitor" target="_blank" class="project-card fade-up">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">02</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+        <span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Google Reviews & Sentiment Monitor</div>
       <p class="project-desc">
@@ -730,18 +968,16 @@
       </p>
       <div class="project-outcome">→ 300 reviews · 3 brands · sentiment scored in seconds</div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Apify</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">Sentiment Analysis</span>
+        <span class="tag">Python</span><span class="tag">Apify</span>
+        <span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">03</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+        <span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">HubSpot Duplicate Contact Audit</div>
       <p class="project-desc">
@@ -749,18 +985,16 @@
       </p>
       <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">HubSpot API</span>
-        <span class="tag">Pandas</span>
-        <span class="tag">CRM</span>
+        <span class="tag">Python</span><span class="tag">HubSpot API</span>
+        <span class="tag">Pandas</span><span class="tag">CRM</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">04</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+        <span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">LinkedIn Ads Automated Report</div>
       <p class="project-desc">
@@ -768,19 +1002,16 @@
       </p>
       <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
       <div class="project-tags">
-        <span class="tag">n8n</span>
-        <span class="tag">Supermetrics</span>
-        <span class="tag">Claude API</span>
-        <span class="tag">Slack</span>
-        <span class="tag">LinkedIn Ads</span>
+        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span>
+        <span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">05</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+        <span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Platform Analytics SQL Library</div>
       <p class="project-desc">
@@ -788,34 +1019,25 @@
       </p>
       <div class="project-outcome">→ 8 funnel stages · 25+ queries · MySQL · production-tested</div>
       <div class="project-tags">
-        <span class="tag">SQL</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">Product Analytics</span>
-        <span class="tag">Funnel Analysis</span>
-        <span class="tag">Cohort Retention</span>
-        <span class="tag">User Behaviour</span>
+        <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Product Analytics</span>
+        <span class="tag">Funnel Analysis</span><span class="tag">Cohort Retention</span><span class="tag">User Behaviour</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
-      <div style="display:flex; justify-content:space-between; align-items:center;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">06</div>
-        <span style="font-family:'DM Mono',monospace; font-size:10px; color:#4ade80; background:rgba(74,222,128,0.08); border:1px solid rgba(74,222,128,0.2); padding:3px 10px; border-radius:3px; letter-spacing:0.08em;">LIVE</span>
+        <span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Social Intelligence Engine</div>
       <p class="project-desc">
-        Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations. Includes a live dashboard and Flask API for n8n integration.
+        Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.
       </p>
       <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
       <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Claude AI</span>
-        <span class="tag">Apify</span>
-        <span class="tag">Flask</span>
-        <span class="tag">n8n</span>
-        <span class="tag">RSS</span>
-        <span class="tag">LinkedIn Scraping</span>
+        <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span>
+        <span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
@@ -823,45 +1045,51 @@
   </div>
 </section>
 
+<!-- ── SERVICES ── -->
 <section id="services">
   <div class="section-label">Services</div>
   <h2>What I do for clients.</h2>
-  <p class="section-sub">Practical, no-overhead work for clients who need results, not retainers.</p>
+
+  <div class="services-callout fade-up">
+    <p class="callout-text">"Practical, no-overhead work for clients who need results — not a retainer, not an agency. Remote or in Brussels."</p>
+    <a href="mailto:ivanmarian96@gmail.com" class="callout-cta">Book a free audit →</a>
+  </div>
 
   <div class="services-grid">
     <div class="service-card fade-up">
-      <div class="service-icon">📈</div>
+      <span class="service-icon">📈</span>
       <div class="service-title">Analytics & Reporting</div>
       <p class="service-desc">GA4 setup, custom dashboards, automated monthly reports, and multi-channel attribution. You get clarity on what's actually working.</p>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">🔗</div>
+      <span class="service-icon">🔗</span>
       <div class="service-title">CRM & Data Automation</div>
       <p class="service-desc">HubSpot segmentation, contact enrichment, lifecycle workflows, and n8n automations that keep your data clean without manual work.</p>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">🐍</div>
+      <span class="service-icon">🐍</span>
       <div class="service-title">Python Scripts & API Work</div>
       <p class="service-desc">Custom scripts that connect your tools — GA4, HubSpot, GTM, internal databases — and turn raw data into actionable outputs.</p>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">🔍</div>
+      <span class="service-icon">🔍</span>
       <div class="service-title">A/B Testing & Optimisation</div>
       <p class="service-desc">Design, run, and analyse experiments across email, landing pages, and user journeys. Data-backed decisions, not gut feelings.</p>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">🏷️</div>
+      <span class="service-icon">🏷️</span>
       <div class="service-title">GTM & Tracking Audits</div>
       <p class="service-desc">Full audits of your Google Tag Manager setup — catching broken tags, duplicate events, and gaps in conversion tracking before they cost you.</p>
     </div>
     <div class="service-card fade-up">
-      <div class="service-icon">📋</div>
+      <span class="service-icon">📋</span>
       <div class="service-title">Data Strategy & Consulting</div>
       <p class="service-desc">Helping clients build a data culture from scratch — KPI frameworks, tool selection, reporting structures, and the thinking behind what to actually measure.</p>
     </div>
   </div>
 </section>
 
+<!-- ── STACK ── -->
 <section id="stack">
   <div class="section-label">Stack</div>
   <h2>Tools I work with.</h2>
@@ -907,6 +1135,7 @@
   </div>
 </section>
 
+<!-- ── ABOUT / CONTACT ── -->
 <div id="about">
   <div class="about-left">
     <div class="section-label">Background</div>
@@ -980,15 +1209,20 @@
   </div>
 </div>
 
+<!-- ── FOOTER ── -->
 <footer>
   <div class="footer-logo">Marian Ivan</div>
   <div class="footer-note">Data & Automation · Brussels, Belgium</div>
 </footer>
+
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
