@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marian Ivan — Data & Automation Consultant</title>
+<title>Marian Ivan — Data, CRM & Marketing Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink:     #14120f;
     --paper:   #faf8f4;
-    --accent:  #1a3a8f;
+    --accent:  #003399;
     --gold:    #c8a84b;
     --muted:   #6b6760;
     --border:  #ddd8ce;
@@ -35,7 +35,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 1000;
     opacity: 0.55;
@@ -60,8 +60,8 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 62%, var(--gold) 62%, var(--gold) 100%);
   }
 
   .nav-logo {
@@ -69,20 +69,15 @@
     font-size: 18px;
     color: var(--ink);
     text-decoration: none;
-    letter-spacing: -0.2px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
   }
 
-  .nav-location {
+  .nav-loc {
     font-size: 10px;
     font-family: 'IBM Plex Mono', monospace;
-    color: var(--gold);
+    color: var(--muted);
     letter-spacing: 0.1em;
+    margin-left: 10px;
     text-transform: uppercase;
-    font-weight: 400;
-    opacity: 0.9;
   }
 
   .nav-links {
@@ -94,7 +89,7 @@
   .nav-links a {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--muted);
     text-decoration: none;
     letter-spacing: 0.1em;
@@ -121,18 +116,6 @@
     position: relative;
   }
 
-  /* Vertical gold rule */
-  .hero-left::after {
-    content: '';
-    position: absolute;
-    right: -1px;
-    top: 15%;
-    bottom: 15%;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-    opacity: 0.4;
-  }
-
   .hero-eyebrow {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
@@ -148,16 +131,15 @@
 
   .hero-eyebrow::before {
     content: '';
-    width: 36px;
+    width: 40px;
     height: 1px;
     background: var(--accent);
-    flex-shrink: 0;
   }
 
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(42px, 4.6vw, 66px);
-    line-height: 1.07;
+    font-size: clamp(44px, 4.8vw, 68px);
+    line-height: 1.06;
     letter-spacing: -0.5px;
     color: var(--ink);
     margin-bottom: 28px;
@@ -179,17 +161,9 @@
     font-weight: 300;
   }
 
-  .hero-desc strong {
-    color: var(--ink);
-    font-weight: 500;
-  }
+  .hero-desc strong { color: var(--ink); font-weight: 500; }
 
-  .hero-cta {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
   .btn-primary {
     display: inline-flex;
@@ -200,18 +174,17 @@
     padding: 13px 28px;
     border-radius: 2px;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: all 0.2s;
+    letter-spacing: 0.03em;
     font-family: 'IBM Plex Mono', monospace;
+    transition: all 0.2s;
   }
 
   .btn-primary:hover {
-    background: #122a6e;
+    background: #002280;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(26, 58, 143, 0.25);
+    box-shadow: 0 6px 20px rgba(0,51,153,0.25);
   }
 
   .btn-secondary {
@@ -224,18 +197,13 @@
     border-radius: 2px;
     border: 1px solid var(--border);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
     transition: all 0.2s;
   }
 
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
   /* ── HERO RIGHT ── */
   .hero-right {
@@ -243,22 +211,22 @@
     flex-direction: column;
     justify-content: center;
     padding: 88px 48px;
-    gap: 18px;
+    gap: 20px;
     background: var(--surface);
   }
 
   .stat-card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 20px 24px;
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    padding: 22px 26px;
     display: flex;
     align-items: center;
     gap: 20px;
     opacity: 0;
     transform: translateX(20px);
     animation: slideIn 0.5s forwards;
-    border-left: 2px solid var(--gold);
   }
 
   .stat-card:nth-child(1) { animation-delay: 0.1s; }
@@ -273,102 +241,71 @@
     background: #eceaf6;
     border-radius: 4px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
+    font-size: 18px; flex-shrink: 0;
   }
 
   .stat-number {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    color: var(--ink);
-    line-height: 1;
+    font-size: 26px; color: var(--ink); line-height: 1;
   }
 
-  .stat-label {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 3px;
-    font-weight: 300;
-  }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 3px; font-weight: 300; }
 
-  /* ── TICKER — fixed: no overflow:hidden on parent, mask edges with gradient instead ── */
+  /* ── TICKER — fixed ── */
   .ticker-wrap {
     background: var(--accent);
-    padding: 13px 0;
+    height: 44px;
     display: flex;
     align-items: center;
-    position: relative;
-  }
-
-  /* Fade edges instead of clipping */
-  .ticker-wrap::before,
-  .ticker-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-    pointer-events: none;
-  }
-  .ticker-wrap::before {
-    left: 0;
-    background: linear-gradient(to right, var(--accent), transparent);
-  }
-  .ticker-wrap::after {
-    right: 0;
-    background: linear-gradient(to left, var(--accent), transparent);
+    overflow: hidden;
+    /* Fade edges with a mask so items don't hard-clip */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+    mask-image:         linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
   }
 
   .ticker-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 9px;
     letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.4);
-    white-space: nowrap;
-    padding: 0 32px;
-    flex-shrink: 0;
-    z-index: 3;
+    color: rgba(255,255,255,0.45);
     text-transform: uppercase;
-  }
-
-  .ticker-track-wrap {
-    flex: 1;
-    overflow: hidden;           /* clip only the scrolling track, not the whole bar */
-    min-width: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 32px 0 48px;
   }
 
   .ticker-track {
     display: flex;
     gap: 0;
-    animation: ticker 28s linear infinite;
-    width: max-content;
+    animation: scroll 30s linear infinite;
+    /* no white-space wrap, single line */
   }
 
-  @keyframes ticker {
+  @keyframes scroll {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
   .ticker-item {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    letter-spacing: 0.1em;
     color: rgba(255,255,255,0.75);
     text-transform: uppercase;
     white-space: nowrap;
-    padding: 0 36px;
+    padding: 0 28px;
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 28px;
   }
 
   .ticker-item::after {
     content: '';
+    display: inline-block;
     width: 4px;
     height: 4px;
-    background: var(--gold);
     border-radius: 50%;
-    opacity: 0.8;
+    background: var(--gold);
     flex-shrink: 0;
   }
 
@@ -388,13 +325,7 @@
     gap: 12px;
   }
 
-  .section-label::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
+  .section-label::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
 
   h2 {
     font-family: 'Playfair Display', serif;
@@ -409,21 +340,17 @@
     color: var(--muted);
     font-size: 15px;
     max-width: 520px;
-    line-height: 1.8;
+    line-height: 1.75;
     margin-bottom: 56px;
     font-weight: 300;
   }
 
   /* ── PROJECTS ── */
-  #projects {
-    background: #0d1020;
-    color: #e8e6e0;
-  }
-
+  #projects { background: #0d1020; color: #e8e6e0; }
   #projects .section-label { color: var(--gold); }
   #projects .section-label::before { background: var(--gold); }
   #projects h2 { color: #f0ede6; }
-  #projects .section-sub { color: #6a6860; }
+  #projects .section-sub { color: #7a7870; }
 
   .projects-grid {
     display: grid;
@@ -442,142 +369,203 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    cursor: pointer;
     text-decoration: none;
     color: inherit;
     border-left: 2px solid transparent;
   }
 
-  .project-card:hover {
-    background: #171b2e;
-    border-left-color: var(--gold);
-  }
+  .project-card:hover { background: #171b2e; border-left-color: var(--gold); }
 
   .project-number {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.12em;
-    opacity: 0.6;
+    font-size: 10px; color: var(--gold);
+    letter-spacing: 0.12em; opacity: 0.65;
   }
 
   .project-title {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: #f0ede6;
-    line-height: 1.25;
-    font-weight: 600;
+    font-size: 20px; color: #f0ede6;
+    line-height: 1.25; font-weight: 600;
   }
 
-  .project-desc {
-    font-size: 13px;
-    color: #6a6860;
-    line-height: 1.75;
-    flex: 1;
-    font-weight: 300;
-  }
+  .project-desc { font-size: 13px; color: #7a7870; line-height: 1.7; flex: 1; font-weight: 300; }
 
   .project-outcome {
-    background: rgba(200, 168, 75, 0.07);
-    border: 1px solid rgba(200, 168, 75, 0.18);
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.2);
     border-radius: 2px;
     padding: 10px 14px;
-    font-size: 12px;
-    color: var(--gold);
+    font-size: 12px; color: var(--gold);
     font-family: 'IBM Plex Mono', monospace;
     letter-spacing: 0.02em;
   }
 
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
   .tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.04em;
-    padding: 3px 9px;
-    border-radius: 2px;
+    font-size: 10px; letter-spacing: 0.05em;
+    padding: 3px 9px; border-radius: 2px;
     background: rgba(255,255,255,0.04);
-    color: #5a5850;
-    border: 1px solid rgba(255,255,255,0.06);
+    color: #6b6a62;
+    border: 1px solid rgba(255,255,255,0.07);
   }
 
-  .project-arrow {
-    font-size: 16px;
-    color: var(--gold);
-    align-self: flex-end;
-    transition: transform 0.2s;
-    opacity: 0.5;
-  }
-
-  .project-card:hover .project-arrow {
-    transform: translate(4px, -4px);
-    opacity: 1;
-  }
+  .project-arrow { font-size: 16px; color: var(--gold); align-self: flex-end; transition: transform 0.2s; opacity: 0.6; }
+  .project-card:hover .project-arrow { transform: translate(4px,-4px); opacity: 1; }
 
   .live-badge {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    color: #1a9a62;
+    font-size: 9px; color: #1a9a62;
     background: rgba(26,154,98,0.1);
-    border: 1px solid rgba(26,154,98,0.22);
-    padding: 3px 9px;
-    border-radius: 2px;
+    border: 1px solid rgba(26,154,98,0.25);
+    padding: 3px 9px; border-radius: 2px;
     letter-spacing: 0.1em;
   }
 
   /* ── SERVICES ── */
   #services { background: var(--paper); }
 
+  .services-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .services-intro-text { font-size: 15px; color: var(--muted); line-height: 1.85; font-weight: 300; }
+  .services-intro-text p + p { margin-top: 14px; }
+
   .services-callout {
     background: var(--accent);
     color: white;
-    padding: 32px 40px;
+    padding: 28px 32px;
     border-radius: 3px;
-    margin-bottom: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px;
-    flex-wrap: wrap;
+  }
+
+  .callout-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
   }
 
   .callout-text {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    line-height: 1.45;
+    font-size: 17px; line-height: 1.5;
     font-style: italic;
     color: rgba(255,255,255,0.92);
-    max-width: 540px;
   }
 
-  .callout-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--gold);
-    color: var(--ink);
-    padding: 12px 24px;
-    border-radius: 2px;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: 500;
+  .callout-sub {
+    font-size: 11px; color: rgba(255,255,255,0.45);
+    margin-top: 16px;
     font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── LIFECYCLE STRIP ── */
+  .lifecycle {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 48px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--card);
+  }
+
+  .lifecycle-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--muted);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    padding: 20px 14px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
     white-space: nowrap;
-    transition: opacity 0.2s;
     flex-shrink: 0;
   }
 
-  .callout-cta:hover { opacity: 0.85; }
+  .lifecycle-stages {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
 
+  .lifecycle-stage {
+    flex: 1;
+    padding: 20px 18px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .lifecycle-stage:last-child { border-right: none; }
+
+  .lifecycle-stage::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    z-index: 1;
+    background: var(--card);
+    padding: 2px 0;
+  }
+
+  .lifecycle-stage:last-child::after { display: none; }
+
+  .ls-phase {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+
+  .ls-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .ls-channels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .ls-ch {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 2px;
+    background: var(--surface);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* ── SERVICES GRID ── */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
@@ -588,110 +576,56 @@
   .service-card {
     background: var(--card);
     padding: 32px 28px;
-    transition: background 0.2s, border-top-color 0.2s;
-    border-top: 2px solid transparent;
+    transition: all 0.2s;
+    border-top: 3px solid transparent;
   }
 
-  .service-card:hover {
-    background: #f7f4ef;
-    border-top-color: var(--accent);
-  }
+  .service-card:hover { background: #f7f4ef; border-top-color: var(--accent); }
 
-  .service-icon {
-    font-size: 22px;
-    margin-bottom: 16px;
-    display: block;
-  }
+  .service-icon { font-size: 22px; margin-bottom: 16px; display: block; }
 
   .service-title {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: var(--ink);
-    font-weight: 600;
+    font-size: 18px; margin-bottom: 10px;
+    color: var(--ink); font-weight: 600;
   }
 
-  .service-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.8;
-    font-weight: 300;
-  }
+  .service-desc { font-size: 13px; color: var(--muted); line-height: 1.75; font-weight: 300; }
 
   /* ── STACK ── */
-  #stack {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
+  #stack { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-  .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
+  .stack-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
 
   .stack-group {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 2px;
+    border-top: 3px solid var(--accent);
+    border-radius: 3px;
     padding: 24px;
-    border-top: 2px solid var(--accent);
   }
 
   .stack-group-title {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    font-weight: 500;
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px; font-weight: 500;
   }
 
   .stack-items { display: flex; flex-direction: column; gap: 9px; }
 
-  .stack-item {
-    font-size: 13px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 300;
-  }
-
-  .stack-item::before {
-    content: '—';
-    color: var(--gold);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    opacity: 0.8;
-    flex-shrink: 0;
-  }
+  .stack-item { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; font-weight: 300; }
+  .stack-item::before { content: '—'; color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.7; }
 
   /* ── ABOUT / CONTACT ── */
-  #about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
+  #about { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
 
   .about-left { padding: 96px 48px; border-right: 1px solid var(--border); }
 
-  .about-right {
-    padding: 96px 48px;
-    background: #0d1020;
-    color: #e8e6e0;
-  }
-
+  .about-right { padding: 96px 48px; background: #0d1020; color: #e8e6e0; }
   .about-right h2 { color: #f0ede6; }
 
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-  }
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
 
   .timeline-item {
     display: grid;
@@ -703,121 +637,62 @@
 
   .timeline-item:first-child { border-top: 1px solid var(--border); }
 
-  .timeline-year {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--accent);
-    padding-top: 3px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-  }
-
+  .timeline-year { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--accent); padding-top: 3px; font-weight: 500; letter-spacing: 0.05em; }
   .timeline-role { font-weight: 500; font-size: 13px; color: var(--ink); }
   .timeline-company { font-size: 12px; color: var(--muted); margin-top: 2px; font-weight: 300; }
 
   .available-badge {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    align-items: center; gap: 8px;
     background: rgba(26,154,98,0.1);
-    border: 1px solid rgba(26,154,98,0.25);
+    border: 1px solid rgba(26,154,98,0.3);
     border-radius: 2px;
     padding: 7px 14px;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: #1a9a62;
-    letter-spacing: 0.1em;
-    margin-bottom: 32px;
-    text-transform: uppercase;
+    font-size: 10px; color: #1a9a62;
+    letter-spacing: 0.1em; margin-bottom: 32px;
   }
 
   .available-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
+    width: 6px; height: 6px; border-radius: 50%;
     background: #1a9a62;
     animation: pulse 2s infinite;
-    flex-shrink: 0;
   }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.3; }
-  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
   .about-right .section-label { color: var(--gold); }
   .about-right .section-label::before { background: var(--gold); }
-  .about-right .section-sub { color: #6a6860; }
+  .about-right .section-sub { color: #7a7870; }
 
   .contact-links { display: flex; flex-direction: column; gap: 10px; margin-top: 32px; }
 
   .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: #6a6860;
-    text-decoration: none;
-    font-size: 13px;
-    padding: 13px 18px;
+    display: flex; align-items: center; gap: 14px;
+    color: #7a7870; text-decoration: none;
+    font-size: 13px; padding: 14px 18px;
     border: 1px solid #1e2030;
-    border-radius: 2px;
-    transition: all 0.2s;
-    font-weight: 300;
+    border-radius: 2px; transition: all 0.2s; font-weight: 300;
   }
 
-  .contact-link:hover {
-    color: #f0ede6;
-    border-color: var(--gold);
-    background: rgba(200,168,75,0.05);
-  }
+  .contact-link:hover { color: #f0ede6; border-color: var(--gold); background: rgba(200,168,75,0.05); }
 
-  .contact-link-icon {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    color: var(--gold);
-    width: 20px;
-    opacity: 0.85;
-    flex-shrink: 0;
-  }
+  .contact-link-icon { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); width: 20px; opacity: 0.8; }
 
   /* ── FOOTER ── */
   footer {
     background: #0d1020;
-    border-top: 1px solid #1a1c2e;
+    border-top: 1px solid #1e2030;
     padding: 28px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
   }
 
-  footer::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--gold));
-    opacity: 0.5;
-  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: #e8e6e0; font-weight: 600; }
+  .footer-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3a3a42; letter-spacing: 0.08em; text-transform: uppercase; }
 
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: #e8e6e0;
-    font-weight: 600;
-  }
-
-  .footer-note {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: #32343f;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  /* ── SCROLL ANIMATIONS ── */
+  /* ── ANIMATIONS ── */
   .fade-up {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; transform: translateY(20px);
     transition: opacity 0.55s ease, transform 0.55s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -828,11 +703,12 @@
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 72px 24px 40px; border-right: none; border-bottom: 1px solid var(--border); }
-    .hero-left::after { display: none; }
     .hero-right { padding: 40px 24px; }
     .projects-grid { grid-template-columns: 1fr; }
-    .services-callout { flex-direction: column; align-items: flex-start; }
-    .services-grid { grid-template-columns: 1fr; }
+    .services-intro { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .lifecycle-stages { flex-wrap: wrap; }
+    .lifecycle-stage { flex: 1 1 45%; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
     #about { grid-template-columns: 1fr; }
     .about-left { padding: 60px 24px; border-right: none; }
@@ -845,12 +721,9 @@
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
-    Marian Ivan
-    <span class="nav-location">● Brussels</span>
-  </a>
+  <a href="#" class="nav-logo">Marian Ivan <span class="nav-loc">· Brussels</span></a>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#services">Services</a></li>
@@ -860,17 +733,19 @@
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Data & Automation</div>
+    <div class="hero-eyebrow">Data · CRM · Multichannel Marketing</div>
     <h1>Turning messy<br>data into <em>clear<br>decisions.</em></h1>
     <p class="hero-desc">
-      I help organisations replace manual reporting with Python scripts, connect their CRM and analytics tools, and build systems that surface the right numbers — <strong>without needing a full data team.</strong>
+      I help organisations replace manual reporting with automated pipelines, build CRM strategies that actually retain customers, and design multichannel journeys that convert — <strong>without a full-time hire.</strong>
+      <br><br>
+      Based in Brussels. Working remotely, worldwide.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
-      <a href="mailto:ivanmarian96@gmail.com" class="btn-secondary">Free audit call</a>
+      <a href="mailto:ivanmarian96@gmail.com" class="btn-secondary">Book a free audit</a>
     </div>
   </div>
   <div class="hero-right">
@@ -905,37 +780,44 @@
   </div>
 </div>
 
-<!-- ── TICKER — fixed structure: label outside the scroll wrapper ── -->
-<div class="ticker-wrap">
-  <span class="ticker-label">Works with</span>
-  <div class="ticker-track-wrap">
-    <div class="ticker-track">
-      <span class="ticker-item">NGOs & Nonprofits</span>
-      <span class="ticker-item">Trade Associations</span>
-      <span class="ticker-item">Public Affairs Firms</span>
-      <span class="ticker-item">Think Tanks</span>
-      <span class="ticker-item">Impact Investors</span>
-      <span class="ticker-item">Startups & Scale-ups</span>
-      <span class="ticker-item">E-commerce Brands</span>
-      <span class="ticker-item">Advocacy Groups</span>
-      <span class="ticker-item">Consultancies</span>
-      <span class="ticker-item">Member Organisations</span>
-      <!-- duplicate set for seamless loop -->
-      <span class="ticker-item">NGOs & Nonprofits</span>
-      <span class="ticker-item">Trade Associations</span>
-      <span class="ticker-item">Public Affairs Firms</span>
-      <span class="ticker-item">Think Tanks</span>
-      <span class="ticker-item">Impact Investors</span>
-      <span class="ticker-item">Startups & Scale-ups</span>
-      <span class="ticker-item">E-commerce Brands</span>
-      <span class="ticker-item">Advocacy Groups</span>
-      <span class="ticker-item">Consultancies</span>
-      <span class="ticker-item">Member Organisations</span>
+<!-- TICKER — fixed: label outside mask, track is self-contained -->
+<div style="background:var(--accent); height:44px; display:flex; align-items:center; overflow:hidden; position:relative;">
+  <!-- Static label, sits outside the scroll area -->
+  <div class="ticker-label" style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); text-transform:uppercase; white-space:nowrap; padding:0 24px 0 48px; flex-shrink:0; position:relative; z-index:2;">
+    I work with
+  </div>
+  <!-- Scrolling track — masked separately via a wrapper -->
+  <div style="flex:1; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 95%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 95%,transparent 100%);">
+    <div class="ticker-track" style="display:flex; animation:scroll 32s linear infinite; width:max-content;">
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">NGOs &amp; Nonprofits <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Trade Associations <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Consultancies <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Scale-ups &amp; Startups <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">E-commerce Brands <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Think Tanks <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Impact-driven Orgs <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Agencies &amp; Studios <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">NGOs &amp; Nonprofits <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Trade Associations <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Consultancies <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Scale-ups &amp; Startups <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">E-commerce Brands <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Think Tanks <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Impact-driven Orgs <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
+      <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">Agencies &amp; Studios <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
     </div>
   </div>
 </div>
 
-<!-- ── PROJECTS ── -->
+<style>
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Work</div>
   <h2>Projects that ship.</h2>
@@ -946,98 +828,75 @@
     <a href="https://github.com/marianivan96/ga4-ecosystem-report" target="_blank" class="project-card fade-up">
       <div class="project-number">01</div>
       <div class="project-title">GA4 Multi-Ecosystem Report Automation</div>
-      <p class="project-desc">
-        Manually exporting analytics reports every month across 8 separate website ecosystems was taking hours. I built a Python script using the GA4 API that pulls all of it automatically — active users, sessions, channel breakdown, top pages, source/medium — and outputs a self-contained HTML dashboard and Excel file, ready to share.
-      </p>
+      <p class="project-desc">Manually exporting analytics reports every month across 8 separate website ecosystems was taking hours. Built a Python script using the GA4 API that pulls all of it automatically — active users, sessions, channel breakdown, top pages, source/medium — and outputs a self-contained HTML dashboard and Excel file, ready to share.</p>
       <div class="project-outcome">→ 8 ecosystems · full report generated in seconds</div>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">GA4 API</span><span class="tag">Pandas</span>
-        <span class="tag">Matplotlib</span><span class="tag">Google Cloud</span><span class="tag">Jinja2</span>
+        <span class="tag">Python</span><span class="tag">GA4 API</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Google Cloud</span><span class="tag">Jinja2</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/reviews-sentiment-monitor" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">02</div>
-        <span class="live-badge">LIVE</span>
+        <div class="project-number">02</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Google Reviews & Sentiment Monitor</div>
-      <p class="project-desc">
-        Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.
-      </p>
+      <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.</p>
       <div class="project-outcome">→ 300 reviews · 3 brands · sentiment scored in seconds</div>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Apify</span>
-        <span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
+        <span class="tag">Python</span><span class="tag">Apify</span><span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">03</div>
-        <span class="live-badge">LIVE</span>
+        <div class="project-number">03</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">HubSpot Duplicate Contact Audit</div>
-      <p class="project-desc">
-        Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.
-      </p>
+      <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
       <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">HubSpot API</span>
-        <span class="tag">Pandas</span><span class="tag">CRM</span>
+        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Pandas</span><span class="tag">CRM</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">04</div>
-        <span class="live-badge">LIVE</span>
+        <div class="project-number">04</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">LinkedIn Ads Automated Report</div>
-      <p class="project-desc">
-        An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.
-      </p>
+      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
       <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
       <div class="project-tags">
-        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span>
-        <span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
+        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">05</div>
-        <span class="live-badge">LIVE</span>
+        <div class="project-number">05</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Platform Analytics SQL Library</div>
-      <p class="project-desc">
-        A library of production SQL queries covering the full user funnel — acquisition, activation, engagement, retention, content performance, search behaviour, and growth flags. Built on a real multi-ecosystem platform with 500,000+ users across 8 ecosystems.
-      </p>
+      <p class="project-desc">A library of production SQL queries covering the full user funnel — acquisition, activation, engagement, retention, content performance, search behaviour, and growth flags. Built on a real multi-ecosystem platform with 500,000+ users across 8 ecosystems.</p>
       <div class="project-outcome">→ 8 funnel stages · 25+ queries · MySQL · production-tested</div>
       <div class="project-tags">
-        <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Product Analytics</span>
-        <span class="tag">Funnel Analysis</span><span class="tag">Cohort Retention</span><span class="tag">User Behaviour</span>
+        <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Product Analytics</span><span class="tag">Funnel Analysis</span><span class="tag">Cohort Retention</span><span class="tag">User Behaviour</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
     <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">06</div>
-        <span class="live-badge">LIVE</span>
+        <div class="project-number">06</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Social Intelligence Engine</div>
-      <p class="project-desc">
-        Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.
-      </p>
+      <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
       <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span>
-        <span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
+        <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span><span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
@@ -1045,14 +904,72 @@
   </div>
 </section>
 
-<!-- ── SERVICES ── -->
+<!-- SERVICES -->
 <section id="services">
   <div class="section-label">Services</div>
   <h2>What I do for clients.</h2>
 
-  <div class="services-callout fade-up">
-    <p class="callout-text">"Practical, no-overhead work for clients who need results — not a retainer, not an agency. Remote or in Brussels."</p>
-    <a href="mailto:ivanmarian96@gmail.com" class="callout-cta">Book a free audit →</a>
+  <div class="services-intro">
+    <div class="services-intro-text">
+      <p>I work project-by-project with teams who need data to actually work for them — not consultants who deliver a slide deck and disappear. Whether you need a one-off CRM cleanup, a reporting pipeline that runs itself, or a strategy for what to measure in the first place, I can help.</p>
+      <p>Six years across CRM operations, data analysis, and marketing automation — from 30-million customer databases to small NGOs getting their first HubSpot setup. Remote-first, but also available in person in Brussels.</p>
+    </div>
+    <div class="services-callout">
+      <div class="callout-label">How to start</div>
+      <p class="callout-text">"Not sure what you need? Start with a free 30-minute audit call."</p>
+      <p class="callout-sub">→ No retainer required · Project-based pricing · Remote or Brussels</p>
+    </div>
+  </div>
+
+  <div class="lifecycle fade-up">
+    <div class="lifecycle-label">Customer lifecycle</div>
+    <div class="lifecycle-stages">
+      <div class="lifecycle-stage">
+        <div class="ls-phase">01 · Acquire</div>
+        <div class="ls-title">Attract & Convert</div>
+        <div class="ls-channels">
+          <span class="ls-ch">Paid Ads</span>
+          <span class="ls-ch">SEO</span>
+          <span class="ls-ch">Landing Pages</span>
+        </div>
+      </div>
+      <div class="lifecycle-stage">
+        <div class="ls-phase">02 · Activate</div>
+        <div class="ls-title">Onboard & Engage</div>
+        <div class="ls-channels">
+          <span class="ls-ch">Email</span>
+          <span class="ls-ch">SMS</span>
+          <span class="ls-ch">In-app</span>
+        </div>
+      </div>
+      <div class="lifecycle-stage">
+        <div class="ls-phase">03 · Retain</div>
+        <div class="ls-title">Nurture & Grow</div>
+        <div class="ls-channels">
+          <span class="ls-ch">Segments</span>
+          <span class="ls-ch">Loyalty</span>
+          <span class="ls-ch">A/B Tests</span>
+        </div>
+      </div>
+      <div class="lifecycle-stage">
+        <div class="ls-phase">04 · Win back</div>
+        <div class="ls-title">Re-engage & Recover</div>
+        <div class="ls-channels">
+          <span class="ls-ch">Push</span>
+          <span class="ls-ch">Email</span>
+          <span class="ls-ch">Retargeting</span>
+        </div>
+      </div>
+      <div class="lifecycle-stage">
+        <div class="ls-phase">05 · Measure</div>
+        <div class="ls-title">Analyse & Optimise</div>
+        <div class="ls-channels">
+          <span class="ls-ch">GA4</span>
+          <span class="ls-ch">SQL</span>
+          <span class="ls-ch">Dashboards</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="services-grid">
@@ -1063,8 +980,18 @@
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🔗</span>
-      <div class="service-title">CRM & Data Automation</div>
-      <p class="service-desc">HubSpot segmentation, contact enrichment, lifecycle workflows, and n8n automations that keep your data clean without manual work.</p>
+      <div class="service-title">CRM Strategy & Management</div>
+      <p class="service-desc">Full CRM ownership — architecture, segmentation, contact enrichment, data hygiene, and lifecycle workflows. HubSpot specialist. From 30M-record databases to first-time setups.</p>
+    </div>
+    <div class="service-card fade-up">
+      <span class="service-icon">🗺️</span>
+      <div class="service-title">Customer Journey Design</div>
+      <p class="service-desc">Map, build, and optimise the full customer lifecycle — from acquisition through retention. Trigger-based flows, behavioural segmentation, and retention sequences that run without manual intervention.</p>
+    </div>
+    <div class="service-card fade-up">
+      <span class="service-icon">📡</span>
+      <div class="service-title">Multichannel Campaign Management</div>
+      <p class="service-desc">Coordinated campaigns across email, SMS, push, and paid — with consistent segmentation and messaging logic across all channels. Strategy, execution, and measurement in one.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🐍</span>
@@ -1089,7 +1016,7 @@
   </div>
 </section>
 
-<!-- ── STACK ── -->
+<!-- STACK -->
 <section id="stack">
   <div class="section-label">Stack</div>
   <h2>Tools I work with.</h2>
@@ -1115,12 +1042,21 @@
       </div>
     </div>
     <div class="stack-group">
-      <div class="stack-group-title">CRM & Automation</div>
+      <div class="stack-group-title">CRM & Lifecycle</div>
       <div class="stack-items">
         <div class="stack-item">HubSpot + API</div>
-        <div class="stack-item">n8n workflows</div>
-        <div class="stack-item">Email segmentation</div>
-        <div class="stack-item">Lifecycle automation</div>
+        <div class="stack-item">Segmentation strategy</div>
+        <div class="stack-item">Lifecycle flows</div>
+        <div class="stack-item">Contact enrichment</div>
+      </div>
+    </div>
+    <div class="stack-group">
+      <div class="stack-group-title">Multichannel Marketing</div>
+      <div class="stack-items">
+        <div class="stack-item">Email campaigns</div>
+        <div class="stack-item">SMS & push</div>
+        <div class="stack-item">n8n automations</div>
+        <div class="stack-item">A/B testing</div>
       </div>
     </div>
     <div class="stack-group">
@@ -1135,14 +1071,12 @@
   </div>
 </section>
 
-<!-- ── ABOUT / CONTACT ── -->
+<!-- ABOUT / CONTACT -->
 <div id="about">
   <div class="about-left">
     <div class="section-label">Background</div>
     <h2>Six years of making data useful.</h2>
-    <p class="section-sub" style="margin-bottom: 0;">
-      Started in marketing, moved into CRM, ended up writing Python scripts to automate the work nobody else wanted to do. Based in Brussels.
-    </p>
+    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM, ended up writing Python scripts to automate the work nobody else wanted to do. Based in Brussels.</p>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">2026 →</div>
@@ -1189,9 +1123,7 @@
     </div>
     <div class="section-label">Contact</div>
     <h2>Let's work together.</h2>
-    <p class="section-sub">
-      Open to project-based work — from one-off scripts to ongoing analytics partnerships. Remote or Brussels.
-    </p>
+    <p class="section-sub">Open to project-based work — from one-off scripts to ongoing analytics partnerships. Remote or Brussels.</p>
     <div class="contact-links">
       <a href="mailto:ivanmarian96@gmail.com" class="contact-link">
         <span class="contact-link-icon">@</span>
@@ -1209,17 +1141,15 @@
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Marian Ivan</div>
-  <div class="footer-note">Data & Automation · Brussels, Belgium</div>
+  <div class="footer-note">Data · CRM · Multichannel · Brussels</div>
 </footer>
 
 <script>
   const observer = new IntersectionObserver(
-    entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    }),
+    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
     { threshold: 0.1 }
   );
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
