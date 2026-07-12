@@ -250,7 +250,6 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    /* Fade edges with a mask so items don't hard-clip */
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
     mask-image:         linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
   }
@@ -270,7 +269,6 @@
     display: flex;
     gap: 0;
     animation: scroll 30s linear infinite;
-    /* no white-space wrap, single line */
   }
 
   @keyframes scroll {
@@ -411,6 +409,15 @@
     font-size: 9px; color: #1a9a62;
     background: rgba(26,154,98,0.1);
     border: 1px solid rgba(26,154,98,0.25);
+    padding: 3px 9px; border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  .case-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px; color: var(--gold);
+    background: rgba(200,168,75,0.1);
+    border: 1px solid rgba(200,168,75,0.28);
     padding: 3px 9px; border-radius: 2px;
     letter-spacing: 0.1em;
   }
@@ -683,7 +690,6 @@
   .footer-note { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #3a3a42; letter-spacing: 0.08em; text-transform: uppercase; }
 
   /* ── ANIMATIONS ── */
-  /* Elements are visible by default. JS adds .js-ready to body to enable animations. */
   .fade-up {
     opacity: 1;
     transform: none;
@@ -700,7 +706,6 @@
     transform: translateY(0);
   }
 
-  /* Stat cards — visible by default, slide in only when JS is active */
   .stat-card {
     opacity: 1;
     transform: none;
@@ -716,6 +721,8 @@
   body.js-ready .stat-card:nth-child(2) { animation-delay: 0.25s; }
   body.js-ready .stat-card:nth-child(3) { animation-delay: 0.4s; }
   body.js-ready .stat-card:nth-child(4) { animation-delay: 0.55s; }
+  body.js-ready .stat-card:nth-child(5) { animation-delay: 0.7s; }
+  body.js-ready .stat-card:nth-child(6) { animation-delay: 0.85s; }
 
   /* ── RESPONSIVE 900px ── */
   @media (max-width: 900px) {
@@ -771,7 +778,7 @@
     <p class="hero-desc">
       I help organisations replace manual reporting with automated pipelines, build CRM strategies that actually retain customers, and design multichannel journeys that convert — <strong>without a full-time hire.</strong>
       <br><br>
-      Based in Brussels. Working remotely, worldwide.
+      Currently running RevOps and growth across six concurrent programs for a Brussels-based nonprofit, alongside independent projects for scale-ups. Based in Brussels. Working remotely, worldwide.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
@@ -805,6 +812,20 @@
       <div>
         <div class="stat-number">0→1</div>
         <div class="stat-label">Python automation builder (n8n + APIs)</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🎯</div>
+      <div>
+        <div class="stat-number">338K</div>
+        <div class="stat-label">LinkedIn reach generated from a €3K ad budget</div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🔧</div>
+      <div>
+        <div class="stat-number">523</div>
+        <div class="stat-label">CRM deal-records reconciled via a Python + API script</div>
       </div>
     </div>
   </div>
@@ -924,6 +945,42 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">07</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">CRM Deal-Data Repair at Scale</div>
+      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
+      <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">08</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">AI-Assisted Buyer Intent Scoring</div>
+      <p class="project-desc">Closed-won deals were sitting in the CRM without any structured read on which company-program combinations were actually driving revenue. Built a Python batch-scoring pipeline that ran each deal through an AI model to classify buyer intent and fit, turning raw deal history into a prioritisation tool for the next campaign cycle.</p>
+      <div class="project-outcome">→ 59 closed-won deals · 51 company-program pairs scored</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Batch API</span><span class="tag">Lead Scoring</span><span class="tag">CRM Strategy</span>
+      </div>
+    </div>
+
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">09</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
+      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
+      <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
+      <div class="project-tags">
+        <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -935,7 +992,7 @@
   <div class="services-intro">
     <div class="services-intro-text">
       <p>I work project-by-project with teams who need data to actually work for them — not consultants who deliver a slide deck and disappear. Whether you need a one-off CRM cleanup, a reporting pipeline that runs itself, or a strategy for what to measure in the first place, I can help.</p>
-      <p>Six years across CRM operations, data analysis, and marketing automation — from 30-million customer databases to small NGOs getting their first HubSpot setup. Remote-first, but also available in person in Brussels.</p>
+      <p>Six years across CRM operations, data analysis, and marketing automation — from 30-million-record databases to small NGOs getting their first HubSpot setup, to scale-ups that need one person who can cover growth, RevOps, and analytics at once. Remote-first, but also available in person in Brussels.</p>
     </div>
     <div class="services-callout">
       <div class="callout-label">How to start</div>
@@ -1004,7 +1061,7 @@
     <div class="service-card fade-up">
       <span class="service-icon">🔗</span>
       <div class="service-title">CRM Strategy & Management</div>
-      <p class="service-desc">Full CRM ownership — architecture, segmentation, contact enrichment, data hygiene, and lifecycle workflows. HubSpot specialist. From 30M-record databases to first-time setups.</p>
+      <p class="service-desc">Full CRM ownership — architecture, segmentation, contact enrichment, data hygiene, and lifecycle workflows. HubSpot specialist. From 30M-record databases to first-time setups, including large-scale deal and contact data repairs.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🗺️</span>
@@ -1034,7 +1091,7 @@
     <div class="service-card fade-up">
       <span class="service-icon">📋</span>
       <div class="service-title">Data Strategy & Consulting</div>
-      <p class="service-desc">Helping clients build a data culture from scratch — KPI frameworks, tool selection, reporting structures, and the thinking behind what to actually measure.</p>
+      <p class="service-desc">Helping clients build a data culture from scratch — KPI frameworks, tool selection, reporting structures, and AI-assisted lead and buyer-intent scoring.</p>
     </div>
   </div>
 </section>
@@ -1099,12 +1156,12 @@
   <div class="about-left">
     <div class="section-label">Background</div>
     <h2>Six years of making data work.</h2>
-    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM strategy, ended up writing Python scripts to automate the work nobody else wanted to do. Six years spanning multichannel campaign management, customer lifecycle design, and data engineering — across databases of 30 million records and organisations of five people. Based in Brussels.</p>
+    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM strategy, ended up writing Python scripts to automate the work nobody else wanted to do. Six years spanning multichannel campaign management, customer lifecycle design, and data engineering — across a 30-million-record e-commerce database and, more recently, a multi-program nonprofit CRM spanning six concurrent programs. Now also working independently with scale-ups on lifecycle, CRM, and growth projects. Based in Brussels.</p>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">2026 →</div>
         <div>
-          <div class="timeline-role">Digital Manager</div>
+          <div class="timeline-role">Senior Digital Manager</div>
           <div class="timeline-company">The Synergist, Brussels</div>
         </div>
       </div>
