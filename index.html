@@ -617,11 +617,9 @@
   .stack-item::before { content: '—'; color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.7; }
 
   /* ── ABOUT / CONTACT ── */
-  #about { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+  #about { display: block; padding: 0; }
 
-  .about-left { padding: 96px 48px; border-right: 1px solid var(--border); }
-
-  .about-right { padding: 96px 48px; background: #0d1020; color: #e8e6e0; }
+  .about-right { padding: 96px 48px; background: #0d1020; color: #e8e6e0; max-width: 640px; }
   .about-right h2 { color: #f0ede6; }
 
   .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
@@ -740,9 +738,8 @@
     .lifecycle-stage { flex: 1 1 calc(50% - 1px); }
     .lifecycle-stage::after { display: none; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
-    #about { grid-template-columns: 1fr; }
-    .about-left { padding: 60px 24px; border-right: none; }
-    .about-right { padding: 60px 24px; }
+    #about { display: block; }
+    .about-right { padding: 60px 24px; max-width: 100%; }
     section { padding: 60px 24px; }
     .ticker-label { display: none; }
     footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
@@ -789,8 +786,8 @@
     <div class="stat-card">
       <div class="stat-icon">📊</div>
       <div>
-        <div class="stat-number">6+</div>
-        <div class="stat-label">Years in CRM & data analytics</div>
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years across marketing, CRM & data</div>
       </div>
     </div>
     <div class="stat-card">
@@ -880,9 +877,21 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">02</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">CRM Deal-Data Repair at Scale</div>
+      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
+      <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
+      </div>
+    </div>
+
     <a href="https://github.com/marianivan96/reviews-sentiment-monitor" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">02</div><span class="live-badge">LIVE</span>
+        <div class="project-number">03</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Google Reviews & Sentiment Monitor</div>
       <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.</p>
@@ -893,9 +902,21 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">04</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
+      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
+      <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
+      <div class="project-tags">
+        <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
+      </div>
+    </div>
+
     <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">03</div><span class="live-badge">LIVE</span>
+        <div class="project-number">05</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">HubSpot Duplicate Contact Audit</div>
       <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
@@ -906,22 +927,21 @@
       <div class="project-arrow">↗</div>
     </a>
 
-    <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
+    <div class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">04</div><span class="live-badge">LIVE</span>
+        <div class="project-number">06</div><span class="case-badge">CASE STUDY</span>
       </div>
-      <div class="project-title">LinkedIn Ads Automated Report</div>
-      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
-      <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
+      <div class="project-title">AI-Assisted Buyer Intent Scoring</div>
+      <p class="project-desc">Closed-won deals were sitting in the CRM without any structured read on which company-program combinations were actually driving revenue. Built a Python batch-scoring pipeline that ran each deal through an AI model to classify buyer intent and fit, turning raw deal history into a prioritisation tool for the next campaign cycle.</p>
+      <div class="project-outcome">→ 59 closed-won deals · 51 company-program pairs scored</div>
       <div class="project-tags">
-        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
+        <span class="tag">Python</span><span class="tag">Batch API</span><span class="tag">Lead Scoring</span><span class="tag">CRM Strategy</span>
       </div>
-      <div class="project-arrow">↗</div>
-    </a>
+    </div>
 
     <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">05</div><span class="live-badge">LIVE</span>
+        <div class="project-number">07</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Platform Analytics SQL Library</div>
       <p class="project-desc">A library of production SQL queries covering the full user funnel — acquisition, activation, engagement, retention, content performance, search behaviour, and growth flags. Built on a real multi-ecosystem platform with 500,000+ users across 8 ecosystems.</p>
@@ -932,9 +952,34 @@
       <div class="project-arrow">↗</div>
     </a>
 
+    <div class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">08</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">WordPress GTM Wireframe & Build</div>
+      <p class="project-desc">An advocacy-focused nonprofit needed a public roadmap site with no design budget and no in-house developer. Wireframed the full page structure, defined the GTM messaging hierarchy end to end, and built it out in WordPress with Elementor — then handed over clear implementation guidance so the internal team could keep maintaining it after launch.</p>
+      <div class="project-outcome">→ Wireframe → live site · GTM messaging structure · Elementor build + handover guide</div>
+      <div class="project-tags">
+        <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">UI/UX</span><span class="tag">GTM Strategy</span>
+      </div>
+    </div>
+
+    <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">09</div><span class="live-badge">LIVE</span>
+      </div>
+      <div class="project-title">LinkedIn Ads Automated Report</div>
+      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
+      <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
+      <div class="project-tags">
+        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
     <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">06</div><span class="live-badge">LIVE</span>
+        <div class="project-number">10</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Social Intelligence Engine</div>
       <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
@@ -944,54 +989,6 @@
       </div>
       <div class="project-arrow">↗</div>
     </a>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">07</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">CRM Deal-Data Repair at Scale</div>
-      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
-      <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">08</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">AI-Assisted Buyer Intent Scoring</div>
-      <p class="project-desc">Closed-won deals were sitting in the CRM without any structured read on which company-program combinations were actually driving revenue. Built a Python batch-scoring pipeline that ran each deal through an AI model to classify buyer intent and fit, turning raw deal history into a prioritisation tool for the next campaign cycle.</p>
-      <div class="project-outcome">→ 59 closed-won deals · 51 company-program pairs scored</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Batch API</span><span class="tag">Lead Scoring</span><span class="tag">CRM Strategy</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">09</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
-      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
-      <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
-      <div class="project-tags">
-        <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
-      </div>
-    </div>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">10</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">WordPress GTM Wireframe & Build</div>
-      <p class="project-desc">An advocacy-focused nonprofit needed a public roadmap site with no design budget and no in-house developer. Wireframed the full page structure, defined the GTM messaging hierarchy end to end, and built it out in WordPress with Elementor — then handed over clear implementation guidance so the internal team could keep maintaining it after launch.</p>
-      <div class="project-outcome">→ Wireframe → live site · GTM messaging structure · Elementor build + handover guide</div>
-      <div class="project-tags">
-        <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">UI/UX</span><span class="tag">GTM Strategy</span>
-      </div>
-    </div>
 
   </div>
 </section>
@@ -1004,7 +1001,7 @@
   <div class="services-intro">
     <div class="services-intro-text">
       <p>I work project-by-project with teams who need data to actually work for them — not consultants who deliver a slide deck and disappear. Whether you need a one-off CRM cleanup, a reporting pipeline that runs itself, or a strategy for what to measure in the first place, I can help.</p>
-      <p>Six years across CRM operations, data analysis, and marketing automation — from 30-million-record databases to small NGOs getting their first HubSpot setup, to scale-ups that need one person who can cover growth, RevOps, and analytics at once. Remote-first, but also available in person in Brussels.</p>
+      <p>Over a decade across CRM operations, data analysis, and marketing automation — from 30-million-record databases to small NGOs getting their first HubSpot setup, to scale-ups that need one person who can cover growth, RevOps, and analytics at once. Remote-first, but also available in person in Brussels.</p>
     </div>
     <div class="services-callout">
       <div class="callout-label">How to start</div>
@@ -1165,42 +1162,6 @@
 
 <!-- ABOUT / CONTACT -->
 <div id="about">
-  <div class="about-left">
-    <div class="section-label">Background</div>
-    <h2>Six years of making data work.</h2>
-    <p class="section-sub" style="margin-bottom:0;">Started in marketing, moved into CRM strategy, ended up writing Python scripts to automate the work nobody else wanted to do. Six years spanning multichannel campaign management, customer lifecycle design, and data engineering — across a 30-million-record e-commerce database and, more recently, a multi-program nonprofit CRM spanning six concurrent programs. Now also working independently with scale-ups on lifecycle, CRM, and growth projects. Based in Brussels.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-year">2026 →</div>
-        <div>
-          <div class="timeline-role">Senior Digital Manager</div>
-          <div class="timeline-company">The Synergist, Brussels</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2023–25</div>
-        <div>
-          <div class="timeline-role">Business Data Analyst</div>
-          <div class="timeline-company">Adore Me, Bucharest</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2022–23</div>
-        <div>
-          <div class="timeline-role">Senior CRM & Marketing Lead</div>
-          <div class="timeline-company">Adore Me, Bucharest</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2019–22</div>
-        <div>
-          <div class="timeline-role">CRM Coordinator</div>
-          <div class="timeline-company">Adore Me, Bucharest</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="about-right">
     <div class="available-badge">
       <div class="available-dot"></div>
