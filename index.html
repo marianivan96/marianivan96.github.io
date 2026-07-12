@@ -619,8 +619,9 @@
   /* ── ABOUT / CONTACT ── */
   #about { display: block; padding: 0; }
 
-  .about-right { padding: 96px 48px; background: #0d1020; color: #e8e6e0; max-width: 640px; }
+  .about-right { padding: 96px 48px; background: #0d1020; color: #e8e6e0; display: flex; justify-content: center; }
   .about-right h2 { color: #f0ede6; }
+  .about-inner { max-width: 640px; width: 100%; }
 
   .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
 
@@ -739,7 +740,7 @@
     .lifecycle-stage::after { display: none; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
     #about { display: block; }
-    .about-right { padding: 60px 24px; max-width: 100%; }
+    .about-right { padding: 60px 24px; }
     section { padding: 60px 24px; }
     .ticker-label { display: none; }
     footer { padding: 24px; flex-direction: column; gap: 12px; text-align: center; }
@@ -1163,6 +1164,7 @@
 <!-- ABOUT / CONTACT -->
 <div id="about">
   <div class="about-right">
+    <div class="about-inner">
     <div class="available-badge">
       <div class="available-dot"></div>
       Available for freelance projects
@@ -1183,6 +1185,7 @@
         <span class="contact-link-icon">in</span>
         linkedin.com/in/marian-ivan96
       </a>
+    </div>
     </div>
   </div>
 </div>
