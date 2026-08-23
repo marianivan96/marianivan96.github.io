@@ -422,6 +422,94 @@
     letter-spacing: 0.1em;
   }
 
+  /* ── PROJECT SPOTLIGHT (AI Search Visibility Checker) ── */
+  .project-spotlight {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #131625 0%, #1a1e35 100%);
+    padding: 44px 40px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 3px solid var(--gold);
+    position: relative;
+  }
+
+  .spotlight-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px; color: var(--gold);
+    background: rgba(200,168,75,0.12);
+    border: 1px solid rgba(200,168,75,0.35);
+    padding: 4px 10px; border-radius: 2px;
+    letter-spacing: 0.14em;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+  }
+
+  .spotlight-badge .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--gold);
+    animation: pulse 2s infinite;
+  }
+
+  .spotlight-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7a7870;
+    margin: 14px 0 8px;
+  }
+
+  .spotlight-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; color: #f0ede6;
+    line-height: 1.15; font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .spotlight-desc {
+    font-size: 14px; color: #9a9890;
+    line-height: 1.8; font-weight: 300;
+    margin-bottom: 24px;
+    max-width: 480px;
+  }
+
+  .spotlight-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .spotlight-panel {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .spotlight-panel-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px; letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  .spotlight-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .spotlight-metric:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .spotlight-metric-label { font-size: 12px; color: #7a7870; font-weight: 300; }
+  .spotlight-metric-value { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #e8e6e0; }
+
   /* ── SERVICES ── */
   #services { background: var(--paper); }
 
@@ -577,6 +665,7 @@
     padding: 32px 28px;
     transition: all 0.2s;
     border-top: 3px solid transparent;
+    position: relative;
   }
 
   .service-card:hover { background: #f7f4ef; border-top-color: var(--accent); }
@@ -590,6 +679,17 @@
   }
 
   .service-desc { font-size: 13px; color: var(--muted); line-height: 1.75; font-weight: 300; }
+
+  .service-new-tag {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px; letter-spacing: 0.1em;
+    color: var(--accent);
+    background: rgba(0,51,153,0.08);
+    border: 1px solid rgba(0,51,153,0.2);
+    padding: 2px 7px; border-radius: 2px;
+  }
 
   /* ── STACK ── */
   #stack { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -731,6 +831,7 @@
     .hero-left { padding: 72px 24px 40px; border-right: none; border-bottom: 1px solid var(--border); }
     .hero-right { padding: 40px 24px; }
     .projects-grid { grid-template-columns: 1fr; }
+    .project-spotlight { grid-template-columns: 1fr; }
     .services-intro { grid-template-columns: 1fr; }
     .services-grid { display: grid; grid-template-columns: 1fr 1fr; }
     .lifecycle { flex-direction: column; }
@@ -866,6 +967,39 @@
   <p class="section-sub">Real problems, real solutions — not dashboards that nobody looks at.</p>
 
   <div class="projects-grid">
+
+    <!-- SPOTLIGHT: AI Search Visibility Checker -->
+    <a href="https://marianivan96.github.io/ai-search-visibility/" target="_blank" class="project-spotlight fade-up">
+      <div>
+        <div class="spotlight-badge"><span class="dot"></span>IN BUILD · TRY THE DEMO</div>
+        <div class="spotlight-eyebrow">Featured tool · AEO / GEO</div>
+        <div class="spotlight-title">AI Search Visibility Checker</div>
+        <p class="spotlight-desc">A free, no-signup tool that shows how often a brand actually appears in AI generated answers, who it's losing ground to, and which sources ChatGPT, Perplexity and Gemini cite instead. Runs fully in the browser, no server, no data collection — you bring your own API key and it never leaves your device.</p>
+        <div class="spotlight-cta">
+          <span class="btn-primary">Try the demo →</span>
+          <a href="https://github.com/marianivan96/ai-search-visibility" target="_blank" class="btn-secondary" style="border-color: rgba(255,255,255,0.15); color:#e8e6e0;">View source</a>
+        </div>
+      </div>
+      <div class="spotlight-panel">
+        <div class="spotlight-panel-label">What it measures</div>
+        <div class="spotlight-metric">
+          <span class="spotlight-metric-label">Visibility score</span>
+          <span class="spotlight-metric-value">% of AI answers mentioning the brand</span>
+        </div>
+        <div class="spotlight-metric">
+          <span class="spotlight-metric-label">Share of voice</span>
+          <span class="spotlight-metric-value">vs. up to 5 named competitors</span>
+        </div>
+        <div class="spotlight-metric">
+          <span class="spotlight-metric-label">Citation sources</span>
+          <span class="spotlight-metric-value">which domains AI engines actually cite</span>
+        </div>
+        <div class="spotlight-metric">
+          <span class="spotlight-metric-label">Coverage</span>
+          <span class="spotlight-metric-value">ChatGPT · Perplexity · Gemini · AI Overviews</span>
+        </div>
+      </div>
+    </a>
 
     <a href="https://github.com/marianivan96/ga4-ecosystem-report" target="_blank" class="project-card fade-up">
       <div class="project-number">01</div>
@@ -1063,6 +1197,12 @@
   </div>
 
   <div class="services-grid">
+    <div class="service-card fade-up">
+      <span class="service-new-tag">NEW</span>
+      <span class="service-icon">🔎</span>
+      <div class="service-title">AI Search & GEO/AEO Visibility</div>
+      <p class="service-desc">Audit how a brand actually shows up in ChatGPT, Perplexity, Gemini and AI Overviews — visibility score, share of voice against named competitors, and a citation gap analysis showing which sources those engines trust instead of you. Delivered as a report with a prioritised action plan.</p>
+    </div>
     <div class="service-card fade-up">
       <span class="service-icon">📈</span>
       <div class="service-title">Analytics & Reporting</div>
