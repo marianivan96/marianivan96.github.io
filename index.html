@@ -416,6 +416,217 @@
     letter-spacing: 0.1em;
   }
 
+  /* case-study cards act as buttons that open the modal */
+  .project-card.case-trigger {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    border: none;
+    border-left: 2px solid transparent;
+  }
+  .project-card.case-trigger:hover { border-left-color: var(--gold); }
+  .case-read-more {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--gold);
+    display: flex; align-items: center; gap: 6px;
+    letter-spacing: 0.05em;
+    align-self: flex-start;
+    opacity: 0.85;
+  }
+  .project-card.case-trigger:hover .case-read-more { opacity: 1; }
+  .case-read-more .arrow { transition: transform 0.2s; }
+  .project-card.case-trigger:hover .case-read-more .arrow { transform: translateX(3px); }
+
+  /* ── CASE STUDY MODAL ── */
+  .case-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13,16,32,0.72);
+    backdrop-filter: blur(3px);
+    z-index: 500;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 64px 24px;
+    overflow-y: auto;
+  }
+  .case-modal-overlay.open { display: flex; }
+
+  .case-modal {
+    background: var(--paper);
+    color: var(--ink);
+    max-width: 780px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    position: relative;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    animation: caseModalIn 0.25s ease;
+  }
+
+  @keyframes caseModalIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .case-modal-close {
+    position: sticky;
+    top: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 20px 0;
+    background: linear-gradient(var(--paper) 60%, transparent);
+    z-index: 2;
+  }
+
+  .case-modal-close button {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--muted);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .case-modal-close button:hover { border-color: var(--accent); color: var(--accent); }
+
+  .case-modal-body { padding: 0 48px 56px; }
+
+  .case-modal-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 18px;
+  }
+  .case-modal-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+
+  .case-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .case-modal-lede {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 620px;
+    margin-bottom: 32px;
+  }
+
+  .case-meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .case-meta-item { background: var(--card); padding: 14px 18px; }
+
+  .case-meta-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px; color: var(--accent);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .case-meta-value { font-size: 13px; color: var(--ink); line-height: 1.5; font-weight: 400; }
+
+  .case-modal-body h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 40px 0 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .case-modal-body > h3:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .case-modal-body h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 22px 0 8px;
+  }
+
+  .case-modal-body p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #33312c;
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+
+  .case-modal-body strong { font-weight: 500; color: var(--ink); }
+
+  .case-modal-body ul, .case-modal-body ol {
+    margin: 0 0 16px 0;
+    padding-left: 22px;
+  }
+  .case-modal-body li {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #33312c;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+
+  .case-tier-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 20px;
+    font-size: 13px;
+  }
+  .case-tier-table th, .case-tier-table td {
+    border: 1px solid var(--border);
+    padding: 9px 14px;
+    text-align: left;
+  }
+  .case-tier-table th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--surface);
+  }
+
+  .case-callout {
+    background: rgba(200,168,75,0.08);
+    border: 1px solid rgba(200,168,75,0.28);
+    border-left: 3px solid var(--gold);
+    border-radius: 2px;
+    padding: 16px 20px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #4a4536;
+    font-weight: 400;
+    margin: 4px 0 20px;
+  }
+
+  .case-modal-body .project-tags { margin-top: 4px; }
+  .case-modal-body .tag {
+    color: var(--muted);
+    border-color: var(--border);
+    background: var(--surface);
+  }
+
   .case-badge {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 9px; color: var(--gold);
@@ -841,8 +1052,10 @@
     .lifecycle-label { writing-mode: horizontal-tb; transform: none; border-right: none; border-bottom: 1px solid var(--border); padding: 12px 20px; }
     .lifecycle-stages { flex-wrap: wrap; overflow: visible; }
     .lifecycle-stage { flex: 1 1 calc(50% - 1px); }
+    .lifecycle-stage:last-child { flex: 1 1 100%; }
     .lifecycle-stage::after { display: none; }
     .stack-grid { grid-template-columns: 1fr 1fr; }
+    .stack-grid .stack-group:last-child { grid-column: 1 / -1; }
     #about { display: block; }
     .about-right { padding: 60px 24px; }
     section { padding: 60px 24px; }
@@ -884,6 +1097,7 @@
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
+      <a href="Marian_Ivan_CV.pdf" download class="btn-secondary">Download CV ↓</a>
       <a href="#" class="btn-secondary email-link">Book a free audit</a>
     </div>
   </div>
@@ -905,8 +1119,8 @@
     <div class="stat-card">
       <div class="stat-icon">🔁</div>
       <div>
-        <div class="stat-number">8</div>
-        <div class="stat-label">Ecosystems automated in GA4 reporting</div>
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Ecosystems tracked across GA4 & GTM</div>
       </div>
     </div>
     <div class="stat-card">
@@ -926,8 +1140,8 @@
     <div class="stat-card">
       <div class="stat-icon">🔧</div>
       <div>
-        <div class="stat-number">523</div>
-        <div class="stat-label">CRM deal-records reconciled via a Python + API script</div>
+        <div class="stat-number">2,000+</div>
+        <div class="stat-label">Broken CRM deal-relationships repaired via Python automation</div>
       </div>
     </div>
   </div>
@@ -1004,8 +1218,73 @@
       </div>
     </div>
 
+    <button type="button" class="project-card case-trigger fade-up" onclick="openCaseModal('crm-deal-repair')">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">01</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">CRM Deal-Data Repair at Scale</div>
+      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
+      <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
+      </div>
+      <div class="case-read-more">Read the case study <span class="arrow">→</span></div>
+    </button>
+
+    <button type="button" class="project-card case-trigger fade-up" onclick="openCaseModal('buyer-intent-scoring')">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">02</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">AI-Assisted Buyer Intent Scoring</div>
+      <p class="project-desc">Closed-won deals were sitting in the CRM without any structured read on which company-program combinations were actually driving revenue. Built a Python batch-scoring pipeline that ran each deal through an AI model to classify buyer intent and fit, turning raw deal history into a prioritisation tool for the next campaign cycle.</p>
+      <div class="project-outcome">→ 59 closed-won deals · 49 pairs scored · ~€2.68M in deal value ranked</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Batch API</span><span class="tag">openpyxl</span><span class="tag">Lead Scoring</span>
+      </div>
+      <div class="case-read-more">Read the case study <span class="arrow">→</span></div>
+    </button>
+
+    <button type="button" class="project-card case-trigger fade-up" onclick="openCaseModal('advocacy-roadmap')">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">03</div><span class="case-badge">CASE STUDY</span>
+      </div>
+      <div class="project-title">Healthcare Advocacy Roadmap Microsite</div>
+      <p class="project-desc">A gated five-step microsite with a self-scoring assessment that feeds HubSpot — built after every standard client-side form-capture method failed against HubSpot's Shadow DOM embed. Sole build owner from wireframe to launch and handoff.</p>
+      <div class="project-outcome">→ 5 step pages + assessment · self-hosted quiz → HubSpot v3 API · tiered follow-up</div>
+      <div class="project-tags">
+        <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">HubSpot API</span><span class="tag">JavaScript</span>
+      </div>
+      <div class="case-read-more">Read the case study <span class="arrow">→</span></div>
+    </button>
+
+    <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">04</div><span class="live-badge">LIVE</span>
+      </div>
+      <div class="project-title">Social Intelligence Engine</div>
+      <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
+      <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span><span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
+    <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">05</div><span class="live-badge">LIVE</span>
+      </div>
+      <div class="project-title">LinkedIn Ads Automated Report</div>
+      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
+      <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
+      <div class="project-tags">
+        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
+      </div>
+      <div class="project-arrow">↗</div>
+    </a>
+
     <a href="https://github.com/marianivan96/ga4-ecosystem-report" target="_blank" class="project-card fade-up">
-      <div class="project-number">01</div>
+      <div class="project-number">06</div>
       <div class="project-title">GA4 Multi-Ecosystem Report Automation</div>
       <p class="project-desc">Manually exporting analytics reports every month across 8 separate website ecosystems was taking hours. Built a Python script using the GA4 API that pulls all of it automatically — active users, sessions, channel breakdown, top pages, source/medium — and outputs a self-contained HTML dashboard and Excel file, ready to share.</p>
       <div class="project-outcome">→ 8 ecosystems · full report generated in seconds</div>
@@ -1014,68 +1293,6 @@
       </div>
       <div class="project-arrow">↗</div>
     </a>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">02</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">CRM Deal-Data Repair at Scale</div>
-      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
-      <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
-      </div>
-    </div>
-
-    <a href="https://github.com/marianivan96/reviews-sentiment-monitor" target="_blank" class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">03</div><span class="live-badge">LIVE</span>
-      </div>
-      <div class="project-title">Google Reviews & Sentiment Monitor</div>
-      <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.</p>
-      <div class="project-outcome">→ 300 reviews · 3 brands · sentiment scored in seconds</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Apify</span><span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
-      </div>
-      <div class="project-arrow">↗</div>
-    </a>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">04</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
-      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
-      <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
-      <div class="project-tags">
-        <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
-      </div>
-    </div>
-
-    <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">05</div><span class="live-badge">LIVE</span>
-      </div>
-      <div class="project-title">HubSpot Duplicate Contact Audit</div>
-      <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
-      <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Pandas</span><span class="tag">CRM</span>
-      </div>
-      <div class="project-arrow">↗</div>
-    </a>
-
-    <div class="project-card fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">06</div><span class="case-badge">CASE STUDY</span>
-      </div>
-      <div class="project-title">AI-Assisted Buyer Intent Scoring</div>
-      <p class="project-desc">Closed-won deals were sitting in the CRM without any structured read on which company-program combinations were actually driving revenue. Built a Python batch-scoring pipeline that ran each deal through an AI model to classify buyer intent and fit, turning raw deal history into a prioritisation tool for the next campaign cycle.</p>
-      <div class="project-outcome">→ 59 closed-won deals · 51 company-program pairs scored</div>
-      <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Batch API</span><span class="tag">Lead Scoring</span><span class="tag">CRM Strategy</span>
-      </div>
-    </div>
 
     <a href="https://github.com/marianivan96/platform-analytics-sql" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -1090,43 +1307,44 @@
       <div class="project-arrow">↗</div>
     </a>
 
-    <div class="project-card fade-up">
+    <a href="https://github.com/marianivan96/hubspot-duplicate-audit" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">08</div><span class="case-badge">CASE STUDY</span>
+        <div class="project-number">08</div><span class="live-badge">LIVE</span>
       </div>
-      <div class="project-title">WordPress GTM Wireframe & Build</div>
-      <p class="project-desc">An advocacy-focused nonprofit needed a public roadmap site with no design budget and no in-house developer. Wireframed the full page structure, defined the GTM messaging hierarchy end to end, and built it out in WordPress with Elementor — then handed over clear implementation guidance so the internal team could keep maintaining it after launch.</p>
-      <div class="project-outcome">→ Wireframe → live site · GTM messaging structure · Elementor build + handover guide</div>
+      <div class="project-title">HubSpot Duplicate Contact Audit</div>
+      <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
+      <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
       <div class="project-tags">
-        <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">UI/UX</span><span class="tag">GTM Strategy</span>
+        <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Pandas</span><span class="tag">CRM</span>
       </div>
-    </div>
+      <div class="project-arrow">↗</div>
+    </a>
 
-    <a href="https://github.com/marianivan96/linkedin-ads-report-n8n" target="_blank" class="project-card fade-up">
+    <a href="https://github.com/marianivan96/reviews-sentiment-monitor" target="_blank" class="project-card fade-up">
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <div class="project-number">09</div><span class="live-badge">LIVE</span>
       </div>
-      <div class="project-title">LinkedIn Ads Automated Report</div>
-      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
-      <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
+      <div class="project-title">Google Reviews & Sentiment Monitor</div>
+      <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.</p>
+      <div class="project-outcome">→ 300 reviews · 3 brands · sentiment scored in seconds</div>
       <div class="project-tags">
-        <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
+        <span class="tag">Python</span><span class="tag">Apify</span><span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
       </div>
       <div class="project-arrow">↗</div>
     </a>
 
-    <a href="https://github.com/marianivan96/social-intelligence-engine" target="_blank" class="project-card fade-up">
+    <button type="button" class="project-card case-trigger fade-up" onclick="openCaseModal('linkedin-campaign')">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div class="project-number">10</div><span class="live-badge">LIVE</span>
+        <div class="project-number">10</div><span class="case-badge">CASE STUDY</span>
       </div>
-      <div class="project-title">Social Intelligence Engine</div>
-      <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
-      <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
+      <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
+      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
+      <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
       <div class="project-tags">
-        <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span><span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
+        <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
       </div>
-      <div class="project-arrow">↗</div>
-    </a>
+      <div class="case-read-more">Read the case study <span class="arrow">→</span></div>
+    </button>
 
   </div>
 </section>
@@ -1208,8 +1426,8 @@
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">📈</span>
-      <div class="service-title">Analytics & Reporting</div>
-      <p class="service-desc">GA4 setup, custom dashboards, automated monthly reports, and multi-channel attribution. You get clarity on what's actually working.</p>
+      <div class="service-title">Analytics, Reporting & Experimentation</div>
+      <p class="service-desc">GA4 setup, custom dashboards, automated monthly reports, and multi-channel attribution — plus the A/B testing that turns those dashboards into decisions, not just charts.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🔗</span>
@@ -1230,11 +1448,6 @@
       <span class="service-icon">🐍</span>
       <div class="service-title">Python Scripts & API Work</div>
       <p class="service-desc">Custom scripts that connect your tools — GA4, HubSpot, GTM, internal databases — and turn raw data into actionable outputs.</p>
-    </div>
-    <div class="service-card fade-up">
-      <span class="service-icon">🔍</span>
-      <div class="service-title">A/B Testing & Optimisation</div>
-      <p class="service-desc">Design, run, and analyse experiments across email, landing pages, and user journeys. Data-backed decisions, not gut feelings.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🏷️</span>
@@ -1328,6 +1541,10 @@
         <span class="contact-link-icon">in</span>
         linkedin.com/in/marian-ivan96
       </a>
+      <a href="Marian_Ivan_CV.pdf" download class="contact-link">
+        <span class="contact-link-icon">↓</span>
+        Download CV (PDF)
+      </a>
     </div>
     </div>
   </div>
@@ -1338,6 +1555,302 @@
   <div class="footer-logo">Marian Ivan</div>
   <div class="footer-note">Growth · CRM · Marketing Technology · Brussels</div>
 </footer>
+
+<!-- CASE STUDY MODAL -->
+<div class="case-modal-overlay" id="caseModalOverlay">
+  <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="case-modal-close">
+      <button type="button" onclick="closeCaseModal()" aria-label="Close case study">✕</button>
+    </div>
+    <div class="case-modal-body" id="caseModalBody"></div>
+  </div>
+</div>
+
+<!-- CASE STUDY CONTENT TEMPLATES -->
+<template id="case-content-advocacy-roadmap">
+
+      <div class="case-modal-eyebrow">Case Study</div>
+      <h2 class="case-modal-title" id="caseModalTitle">Healthcare Advocacy Roadmap Microsite</h2>
+      <p class="case-modal-lede">A gated five-step microsite with a self-scoring assessment that feeds HubSpot, built after every standard form-capture method failed.</p>
+
+      <div class="case-meta">
+        <div class="case-meta-item"><div class="case-meta-label">Client</div><div class="case-meta-value">A healthcare advocacy nonprofit running a patient/professional engagement program</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">My role</div><div class="case-meta-value">Sole build owner, wireframe through to launch and handoff</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Scope</div><div class="case-meta-value">Landing page plus five step pages, an 8-question scored self assessment, one interactive checklist tool</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Stack</div><div class="case-meta-value">WordPress, Elementor, custom JavaScript, HubSpot Forms v3 submissions API, Yoast</div></div>
+        <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Status</div><div class="case-meta-value">Published and in production, noindexed, direct link only</div></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>The client is a healthcare advocacy nonprofit running a patient and professional engagement program. Its access and advocacy roadmap already existed as a five-step journey inside a client deck, illustrated as a winding road with five stops along it.</p>
+      <p>A deck is a fine way to present a roadmap once, in a room. It is a poor way to let someone work through one. There was no way to hand a person the roadmap and have them use it, no way to attach practical assets to each step, and no way to know anything about who was engaging with it or how ready they were. The content existed. The tool did not.</p>
+      <p>Approvals ran through a single decision maker on the client side, which kept the feedback loop short and made it possible to move from wireframe to launch without design by committee.</p>
+
+      <h3>Objective</h3>
+      <ol>
+        <li>Preserve the visual language of the deck, specifically the winding road, so the online version read as the same artefact rather than a separate thing.</li>
+        <li>Give each of the five steps a page of its own, carrying reference content, downloadable assets and real examples of the tools being described.</li>
+        <li>Assess the visitor rather than just informing them, producing a score and a readiness tier.</li>
+        <li>Land that score and tier in HubSpot so the program could follow up differently depending on where the person sat.</li>
+        <li>Stay gated. This is an advocacy tool distributed deliberately, not a page chasing search traffic.</li>
+      </ol>
+
+      <h3>What I built</h3>
+      <p><strong>The roadmap.</strong> A landing page carrying the winding road as clickable SVG, with five stops mapping to five step pages (roadmap-step-01 through roadmap-step-05). The road was rebuilt to match the deck rather than approximated, so the two versions of the roadmap stay recognisably the same asset.</p>
+      <p><strong>The step pages.</strong> Every step page follows one repeated structure, which is what makes five pages feel like one tool instead of five microsites:</p>
+      <ul>
+        <li>A three-column what/how/tool block at the top, so a visitor sees the objective, the method and the instrument for that step before scrolling.</li>
+        <li>A horizontally scrolling row of how-to guide cards, each with a downloadable PDF. Horizontal scroll here was a deliberate call — it keeps the guides visible as a set instead of burying step content under a vertical stack of attachments.</li>
+        <li>Real screenshots of the tools being discussed, not stock imagery. If a step tells you to use something, the page shows you what it actually looks like.</li>
+        <li>An additional resources block, then previous/next navigation, so the roadmap can be walked in sequence or dipped into at any point.</li>
+      </ul>
+      <p>Step 4 also carries a separate interactive checklist tool, since that step needed something the visitor works through rather than reads.</p>
+
+      <h4>Design system</h4>
+      <p>Built to the client specification and applied consistently across all six pages: Literata for headings, Montserrat for body, on a palette of ocean green, azure, caramel, pine green and platinum.</p>
+
+      <h4>The self assessment</h4>
+      <p>Eight questions, each answered Low, Medium or High and scored 1, 2 or 3. The total bands into four readiness tiers:</p>
+      <table class="case-tier-table">
+        <thead><tr><th>Tier</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr><td>Novice</td><td>8 to 11</td></tr>
+          <tr><td>Emerging</td><td>12 to 15</td></tr>
+          <tr><td>Engaged</td><td>16 to 19</td></tr>
+          <tr><td>Experienced</td><td>20 to 24</td></tr>
+        </tbody>
+      </table>
+      <p>The tier is the point. It is what turns a content microsite into a segmentation instrument, and it is what the HubSpot follow-up keys off.</p>
+
+      <h4>The distribution decision</h4>
+      <p>The pages are published but noindexed via Yoast and kept out of the main navigation, reachable by direct link only. That was intentional. A gated advocacy tool that is handed to the right people is worth more here than an indexed page collecting unqualified traffic, and it keeps the assessment data clean.</p>
+
+      <h3>The hard part</h3>
+      <p>The assessment had to score client-side and the result had to reach HubSpot. That sounds like a solved problem, and with HubSpot's older embed it would have been.</p>
+      <p>HubSpot's new forms framework renders the form inside a Shadow DOM within a cross-origin iframe. The practical consequence is that the parent page cannot see inside the form. It cannot read the fields, cannot reliably observe them changing, and cannot bind to what happens when the visitor submits. Every standard client-side capture route was tried:</p>
+      <ul>
+        <li>The <code>onFormSubmitted</code> callback.</li>
+        <li><code>postMessage</code> listeners on the parent window.</li>
+        <li>A <code>MutationObserver</code> watching for the submission state.</li>
+        <li>DOM click delegation on the submit control.</li>
+      </ul>
+      <p>All four failed. There was no supported path from the parent page to the answers at the moment of submission, and no amount of additional cleverness on the parent side was going to produce one, because the boundary is the whole point of that architecture.</p>
+      <p>So the approach shifted: stop trying to read HubSpot's form, and stop using it as the form.</p>
+      <p>The quiz was rebuilt and self-hosted on the page. Scoring, banding and state all live in code under direct control, which means the total and the tier exist before anything is sent anywhere. On submit, the page posts directly to HubSpot's v3 submissions API, with hidden fields carrying the score and the tier alongside the contact details.</p>
+      <p>The outcome is functionally what the embed was supposed to deliver and could not. The contact record is created in HubSpot with the assessment result attached, and the tiered follow-up still fires off the back of it. Nothing downstream had to be redesigned around the workaround.</p>
+      <div class="case-callout">The reasoning behind the switch matters more than the code. The embed's internals are HubSpot's to change and are explicitly closed to the host page. The submissions API is a documented contract. Once it was clear the requirement depended on reaching inside something designed not to be reached into, the right move was to change which surface the integration depended on, not to keep hardening a workaround against an interface that was never going to hold.</div>
+
+      <h3>Outcome</h3>
+      <p>Delivered end to end, wireframe through to launch, including handoff.</p>
+      <p>The microsite is live and in production: six pages, the SVG roadmap, the guide libraries with their downloadable PDFs, the Step 4 checklist tool and the assessment. The submission path works end to end. Scores and tiers arrive on the HubSpot contact record and trigger the tiered follow-up as intended, through a route that does not depend on HubSpot's embedded form behaving in a way it does not behave.</p>
+      <p>No performance figures are quoted here. This is a gated, direct-link tool, and no numbers are attributed to it that weren't measured. What can be said accurately is that it shipped, it functions, and the integration is stable because it rests on a documented API rather than on scraping a closed embed.</p>
+      <p>What the build makes measurable from here is worth noting: because score and tier are written to the contact record as fields, readiness distribution across respondents is queryable in HubSpot, and follow-up performance can be compared tier against tier whenever the program chooses to look.</p>
+
+      <h3>Stack</h3>
+      <div class="project-tags">
+        <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Custom JavaScript</span><span class="tag">Inline SVG</span><span class="tag">HubSpot Forms v3 API</span><span class="tag">Yoast SEO</span>
+      </div>
+
+</template>
+
+<template id="case-content-crm-deal-repair">
+
+      <div class="case-modal-eyebrow">Case Study</div>
+      <h2 class="case-modal-title" id="caseModalTitle">CRM Deal-Data Repair at Scale</h2>
+      <p class="case-modal-lede">556 deals duplicated forward with their associations stripped — 465 repaired automatically, 58 flagged rather than guessed at, every write preceded by a dry run and backed by a revert path.</p>
+
+      <div class="case-meta">
+        <div class="case-meta-item"><div class="case-meta-label">Context</div><div class="case-meta-value">A multi-program HubSpot instance, prior year deals rolled forward into the new year</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">My role</div><div class="case-meta-value">Built and ran the repair pipeline, from triage through remediation and reporting</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Scale</div><div class="case-meta-value">556 deals affected, 523 processed</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Stack</div><div class="case-meta-value">Python, HubSpot private app API</div></div>
+        <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Status</div><div class="case-meta-value">Complete — backup snapshot and revert script retained, results logged per run</div></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>A multi-program HubSpot instance duplicated the previous year's deals forward into the new year. The duplication carried the amounts. It carried nothing else. Company, contact and note associations all came through blank.</p>
+      <p>This is a nastier failure than an obvious one. A deal with an amount and no company association still counts toward a pipeline total, so nothing looks broken from the top. It only surfaces when someone groups by account, attributes revenue to a program, or opens a record and finds nothing attached to it. By then the year is already running on numbers nobody can trace back to a customer.</p>
+
+      <h3>Objective</h3>
+      <ol>
+        <li>Restore company, contact and note associations on the new year deals.</li>
+        <li>Match each deal to its real source, not to a plausible looking neighbour.</li>
+        <li>Touch the new year records only. Leave the prior year data exactly as found.</li>
+        <li>Refuse to fill in anything the source data could not evidence.</li>
+        <li>Make every write reversible before making any of them.</li>
+      </ol>
+
+      <h3>What I built</h3>
+      <p>A Python script running against the HubSpot private app API, with the work split into triage and remediation.</p>
+      <p><strong>Triage first.</strong> Of the 556 affected deals, 17 were already correct and were left alone. A further 16 were set aside deliberately: multi-year deals, ambiguous duplicates, and deals with no prior-year source to match against. Those needed a human decision, not an automated one. That left 523 to process.</p>
+      <p><strong>Matching.</strong> Each new-year deal was matched to its prior-year source on deal name plus pipeline. Pipeline matters here, because in a multi-program instance the same deal name can exist in more than one program, and matching on name alone would quietly cross program boundaries.</p>
+      <p><strong>Live fetch at runtime.</strong> Company, contact and note associations were pulled live from the API at the moment of writing, never from a CSV export. An export is a photograph of the CRM at a moment that has already passed. Associations written from one are as stale as the file, and in a bulk write that staleness gets baked into hundreds of records at once with no obvious signal that anything is wrong.</p>
+      <p><strong>Write scope.</strong> Associations were written onto the new-year deal only. The prior-year records were read from and never modified.</p>
+
+      <h3>The hard part</h3>
+      <p>The matching logic was not the difficult part. The difficult part is that this is a bulk write against live CRM data, and a wrong association is worse than a blank one.</p>
+      <p>Blank data is visibly broken. Somebody notices and asks. Wrongly populated data is invisibly broken, and it gets trusted, reported on, and acted upon. The entire build had to be structured around the possibility of being wrong at scale. So every run went through the same rig:</p>
+      <ul>
+        <li>Dry run before any live write, printing exactly what would change and on which records.</li>
+        <li>Explicit typed confirmation in the terminal before switching to live mode — not a keypress, a typed string, because the cost of an accidental confirmation here is 500 records.</li>
+        <li>Full backup snapshot taken before writing.</li>
+        <li>A revert script kept on hand, written before it was needed rather than after.</li>
+        <li>A results log after every run, so the outcome of each pass is auditable rather than remembered.</li>
+      </ul>
+      <div class="case-callout">The other half of the hard part is knowing when not to write. 58 of the 523 deals could not be repaired because their prior-year source deal also lacked a company association. There was nothing to copy. Those 58 were flagged back to the data owner with the reason attached, rather than resolved by inference, fuzzy matching or best guess. A repair script that guesses is not a repair script — it is a second data quality incident wearing the first one's clothes.</div>
+
+      <h3>Outcome</h3>
+      <ul>
+        <li><strong>465 of 523 deals repaired automatically</strong>, just under 89 percent of everything in scope.</li>
+        <li><strong>58 flagged back to the data owner</strong> with the specific reason they could not be resolved, rather than silently skipped or guessed at.</li>
+        <li><strong>16 deliberately set aside at triage</strong> as human decisions: multi-year deals, ambiguous duplicates, no prior-year source.</li>
+        <li><strong>17 already correct and left untouched.</strong></li>
+        <li><strong>Zero writes to prior-year records.</strong></li>
+      </ul>
+      <p>Backup snapshot and revert script retained after completion, with a results log for every run. The repaired deals carry their company, contact and note associations again, which means pipeline reporting can be grouped by account and attributed by program without a manual reconciliation step in front of it.</p>
+
+      <h3>Stack</h3>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HubSpot Private App API</span><span class="tag">Association Read/Write</span><span class="tag">Data Integrity</span>
+      </div>
+
+</template>
+
+<template id="case-content-buyer-intent-scoring">
+
+      <div class="case-modal-eyebrow">Case Study</div>
+      <h2 class="case-modal-title" id="caseModalTitle">AI-Assisted Buyer Intent Scoring</h2>
+      <p class="case-modal-lede">59 closed-won deals turned into 49 scored company and program pairs covering roughly €2.68M in active deal value, delivered as a working Excel instrument rather than a report, on a pipeline rebuilt from 8,000 API calls down to 345.</p>
+
+      <div class="case-meta">
+        <div class="case-meta-item"><div class="case-meta-label">Problem</div><div class="case-meta-value">No structured read on which company/program combinations carried renewal or expansion risk</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">My role</div><div class="case-meta-value">Built the extraction pipeline, the scoring methodology and the delivered workbook</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Scale</div><div class="case-meta-value">59 closed-won deals, 35 companies, 6 program pipelines, 188 notes, ~9,000 logged emails</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Result</div><div class="case-meta-value">51 pairs identified, 49 scored into four tiers, ~€2.68M in active deal value</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Deliverable</div><div class="case-meta-value">Five-tab Excel workbook, live formulas, ranked summary plus full rationale and source quote per row</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Runtime</div><div class="case-meta-value">~345 API calls, ~4 minutes — down from 8,000+ calls and hours</div></div>
+        <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Stack</div><div class="case-meta-value">Python, HubSpot batch read API, openpyxl</div></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>Closed-won deals sat in the CRM as outcomes and nothing else. There was no structured view of which company and program combinations were genuinely healthy and which were quietly heading toward non-renewal, so the read on renewal and expansion risk was effectively an annual guess.</p>
+      <p>The evidence to answer it already existed. It was sitting in 188 deal notes and roughly 9,000 logged emails, spread across six program pipelines, in a volume and a format nobody was going to work through by hand every year.</p>
+
+      <h3>Objective</h3>
+      <ol>
+        <li>Extract notes and one-to-one email engagement for every closed-won deal across all six pipelines.</li>
+        <li>Score each company and program pair on buyer intent, renewal signal and risk.</li>
+        <li>Make every score auditable, so a program lead can challenge the evidence rather than the number.</li>
+        <li>Score nothing where the evidence is insufficient.</li>
+        <li>Hand it over as something the program leads can sort, filter and correct themselves, not a static output that expires the moment one number changes.</li>
+      </ol>
+
+      <h3>What I built</h3>
+      <p><strong>The extraction pipeline.</strong> Python against the HubSpot API, pulling every note and every one-to-one email associated with the 59 closed-won deals, resolved up to the company and program level.</p>
+      <p><strong>Per-company digest files, built before anything was scored.</strong> Roughly 9,000 logged emails is not a signal set, it is a haystack with mass-send noise in it. The pipeline built a digest file per company that deduplicated the record and stripped broadcast sends, bounces and auto-replies. Without that step, a company sitting on a newsletter list looks more engaged than a company whose account owner had three substantive conversations with them. Engagement volume is the easiest thing to count and the easiest thing to be fooled by.</p>
+      <p><strong>All 188 notes read in full, not sampled.</strong> Notes are where account owners write down what they actually think about a relationship. Sampling them means sampling the single most valuable evidence in the set.</p>
+      <p><strong>Duplicate company records clustered manually.</strong> A few accounts existed in the CRM as 2 or 3 separate company records. Those were clustered before scoring. Left alone, the same account gets scored more than once, each time against a fragment of its own history, and every fragment looks weaker than the account really is.</p>
+      <p><strong>Reading in context, not keyword matching.</strong> Every note was read in full and every email assessed in the context of the thread it belonged to. Keyword matching is the obvious shortcut here and it fails badly in a six-program instance, because the same vocabulary means different things in different programs. A term like "membership" can refer to an entirely different program than the one the deal sits in, and a keyword pass counts that as a signal. Reading in context is the difference between a score and a coincidence.</p>
+      <p><strong>One verbatim quote behind every score.</strong> Each score carries a direct quote from the source material that supports it. That single rule is what stops the output being a black box. A program lead who disagrees with a tier can go straight to the sentence that produced it.</p>
+      <p><strong>Scoring rules, stated explicitly rather than buried in the code:</strong></p>
+      <ul>
+        <li>Current-year content is weighted above prior-year content. Relationship state decays.</li>
+        <li>Notes outweigh raw email volume. A high message count is activity, not intent, and the substance lives in what account owners wrote down.</li>
+        <li>Budget-constrained buyer intent is scored as a positive renewal signal, not a weakness. Someone negotiating on price is someone planning to stay.</li>
+        <li>Champion departure or team dissolution is flagged as real risk, regardless of how healthy the surrounding engagement looks.</li>
+      </ul>
+
+      <h4>The deliverable: a five-tab Excel workbook, generated with openpyxl</h4>
+      <ul>
+        <li><strong>Tab 1, Ranked Summary.</strong> Rank, score out of 100, tier, amount, key contact and a one-line signal per row — the tab someone reads in a meeting without needing anything explained to them.</li>
+        <li><strong>Supporting tabs.</strong> Full rationale and the source quote for every row, so any number on tab 1 can be traced back to the evidence that produced it.</li>
+      </ul>
+      <p>It was built as an instrument rather than a document:</p>
+      <ul>
+        <li><strong>Live COUNTIF, SUMIF and AVERAGEIF formulas</strong> instead of pasted static values, so the workbook recalculates if a score is corrected. Correcting a number should not require regenerating the file.</li>
+        <li><strong>Excel table objects with autofilter and frozen header rows</strong>, so the thing survives contact with a real user sorting it.</li>
+        <li><strong>Pale background fills coded by tier, with heavier borders marking the boundaries between tiers</strong>, so the grouping registers at a glance without anyone touching the filter.</li>
+      </ul>
+
+      <h3>The hard part</h3>
+      <p>There were three, and they failed in completely different ways.</p>
+
+      <h4>Making it run</h4>
+      <p>The first pass fetched emails one at a time. That worked out to more than 8,000 API calls, took hours, and nearly crashed before finishing. Rebuilt on HubSpot's batch read endpoints, which accept up to 100 IDs per call, the same job came down to roughly 345 calls and about 4 minutes.</p>
+      <p>The runtime figure matters more than it looks. A job that takes hours and might die halfway is a job you run once, reluctantly, and then treat as settled for a year. A job that takes four minutes is one you can rerun whenever the underlying data has moved, which is the difference between a one-off report and a piece of working infrastructure.</p>
+
+      <h4>Making it trustworthy</h4>
+      <p>The throughput problem is solved with better engineering. The interpretation problem is not. A scoring system that account owners do not believe gets ignored no matter how fast it runs, and the fastest way to lose that credibility is to produce a confident tier out of an ambiguous keyword.</p>
+      <div class="case-callout">That is why the reading rules and the quote requirement are part of the build rather than a nicety on top of it. It is also why 2 of the 51 pairs were set aside as insufficient evidence rather than scored. Two unscored pairs with a stated reason cost far less credibility than two guessed ones that turn out wrong in front of the program lead who knows the account.</div>
+
+      <h4>Proving it, on the one row that would not settle</h4>
+      <p>One flagged row was rescored three times by lighter passes: 60, then 63, then 57. Three passes, three different answers, all sitting in a band wide enough to move the row between tiers. That instability was the signal. A row that will not converge does not need a fourth quick opinion, it needs a different method.</p>
+      <p>So it got a full re-check. The complete raw export was pulled. Two contact records that turned out to be the same person logged twice were deduplicated. Then every note and every email was read chronologically, with no keyword pre-filtering at all.</p>
+      <p>That surfaced 40 messages sitting inside quoted email threads, which every prior pass had missed entirely, because keyword filters do not look inside quoted replies. Forty messages of relationship history, invisible to every faster method used on the same account.</p>
+      <p>With that evidence finally in view, two things changed the picture: a significant renewal-scale signal that none of the lighter passes had seen, and a contact whose actual role was more senior than the CRM had them logged as. Both were weighed against a live account transition, which was flagged rather than ignored, because the timing on a transition is exactly the sort of thing a tier alone will not tell you. The final score landed in a materially different tier from any of the three lighter passes.</p>
+      <div class="case-callout">Scores produced by keyword-filtered passes are not the same instrument as scores produced by full chronological reading, even on the same account. The gap between them is not noise. It is precisely the size of the error a confident but wrong tier would have cost the first time a program lead recognised their own account sitting in the wrong band.</div>
+
+      <h3>Outcome</h3>
+      <ul>
+        <li><strong>51 company and program pairs identified</strong> across 59 closed-won deals, 35 companies and 6 program pipelines.</li>
+        <li><strong>49 scored</strong> into four tiers, with a final distribution of 24 Priority, 19 Standard, 5 Watch and 1 At Risk.</li>
+        <li><strong>2 set aside</strong> for insufficient evidence, flagged rather than guessed.</li>
+        <li><strong>Roughly €2.68M in active deal value</strong> scored and ranked.</li>
+        <li><strong>Every score backed by one verbatim quote</strong> from the underlying notes or email, making the whole output auditable rather than opaque.</li>
+        <li><strong>Runtime reduced from 8,000+ calls and hours to around 345 calls and roughly 4 minutes</strong>, which is what makes the analysis repeatable rather than annual.</li>
+        <li><strong>Delivered as a five-tab workbook with live formulas</strong>, so a corrected score updates the summary rather than invalidating the file.</li>
+      </ul>
+      <p>What changed is the nature of the question. Renewal and expansion risk moved from an annual guess to a ranked, evidenced list with a stated methodology and a traceable quote behind every row. No renewal outcomes are attributed here, because the deliverable is the prioritisation instrument, not the result of acting on it.</p>
+
+      <h3>Stack</h3>
+      <div class="project-tags">
+        <span class="tag">Python</span><span class="tag">HubSpot Batch API</span><span class="tag">openpyxl</span><span class="tag">AI-Assisted Scoring</span><span class="tag">Data Quality / QA</span>
+      </div>
+
+</template>
+
+<template id="case-content-linkedin-campaign">
+
+      <div class="case-modal-eyebrow">Case Study</div>
+      <h2 class="case-modal-title" id="caseModalTitle">B2B LinkedIn Campaign on a Lean Budget</h2>
+      <p class="case-modal-lede">€3,000, two audiences built from scratch inside a targeting rule set that had to be discovered by hand, and around 338K reach across US and EMEA.</p>
+
+      <div class="case-meta">
+        <div class="case-meta-item"><div class="case-meta-label">Client</div><div class="case-meta-value">A B2B network targeting pharma, biotech and health-tech decision makers</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Markets</div><div class="case-meta-value">US and EMEA</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Budget</div><div class="case-meta-value">€3,000 total</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">My role</div><div class="case-meta-value">Audience strategy, campaign structure, flight planning and build</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Result</div><div class="case-meta-value">~338K combined reach across 5 audience/ad combinations</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Stack</div><div class="case-meta-value">LinkedIn Campaign Manager</div></div>
+      </div>
+
+      <h3>Context</h3>
+      <p>The client needed awareness and lead generation among decision makers in pharma, biotech and health tech, across both the US and EMEA, on a total budget of €3,000.</p>
+      <p>That budget is the whole strategic problem. €3,000 on LinkedIn does not survive broad-match spend. It buys either one carefully constructed audience set with disciplined pacing, or a lot of impressions in front of people who were never going to convert. There is no third outcome, and there is no room to buy your way out of a targeting mistake once it has been made.</p>
+
+      <h3>The constraint that shaped everything</h3>
+      <p>Two platform rules dictated how the audiences could be built, and both had to be found the hard way.</p>
+      <p><strong>Member Groups are unavailable for EU and EMEA targeting</strong> under LinkedIn's DSA compliance rules. Groups are one of the sharpest intent proxies the platform offers for a niche professional audience. Losing that facet across half the geographic footprint means the EMEA audience cannot simply mirror the US one — it has to be built from different components to reach a comparable person.</p>
+      <p><strong>Job Titles cannot be ANDed with Job Seniority or Job Function.</strong> The permitted combinations are Job Titles plus Company Industries, or Job Function plus Seniority. In practice that means you cannot ask for senior people holding specific titles. You choose which axis of precision you keep, then pair it with the one facet the platform allows alongside it.</p>
+      <div class="case-callout">Neither of these presented itself cleanly up front. They came out of direct trial and error in Campaign Manager, building combinations and watching them get rejected or watching estimated reach collapse, until the map of what was actually permitted was clear. On a €3,000 budget that discovery had to happen before spend, not during it.</div>
+
+      <h3>What I built</h3>
+      <p><strong>Two audiences from scratch</strong>, sized at roughly 94K and 110K reach, constructed only from AND combinations the platform actually permits, and built separately for the regions rather than duplicated across them.</p>
+      <p><strong>A phased flight schedule with a hard ceiling of two ads live at once.</strong> Budget fragmentation is the standard way small B2B budgets die. Spread €3,000 across six or seven concurrent creatives and every one of them collects too few impressions to produce a readable result, so the campaign ends with no reach worth having and no data worth acting on. Two at a time keeps each flight legible.</p>
+      <p><strong>Per-ad lifetime budgets of €250 to €900</strong> depending on the flight, rather than a flat daily rate. A lifetime budget per ad caps exposure per test and makes each flight a discrete, comparable unit. A flat daily rate does the opposite: it spends evenly across ads that are not equally worth spending on, and it keeps paying for the weak ones as long as they are live.</p>
+
+      <h3>Outcome</h3>
+      <p><strong>Around 338K combined reach across 5 audience and ad combinations, on €3,000 total.</strong></p>
+      <p>Early performance across the account sits at 0.98% CTR and €32.96 CPM. These are in-flight figures, an early read rather than closed-campaign results, and no cost per lead is quoted here because that number is not settled.</p>
+      <p>The segment-level result is the one worth acting on: the CMO persona segment is running at 2.98% CTR, roughly three times the campaign-level rate and well above account average. That is the finding that makes the rest of the budget allocatable instead of evenly spread, because it identifies which persona inside a permitted targeting combination is actually carrying the response.</p>
+      <p>The wider takeaway from the build is that the targeting constraints were not an obstacle to the strategy — they were the strategy. Once Member Groups and title-plus-seniority stacking were off the table, audience quality had to come from choosing the right permitted pairings and pacing them properly. On this budget, structure was the only lever that mattered.</p>
+
+      <h3>Stack</h3>
+      <div class="project-tags">
+        <span class="tag">LinkedIn Campaign Manager</span><span class="tag">DSA-Compliant Targeting</span><span class="tag">Audience Strategy</span><span class="tag">Flight Planning</span>
+      </div>
+
+</template>
 
 <script>
   // Assemble email in JS — immune to Cloudflare email obfuscation
@@ -1362,6 +1875,33 @@
   );
   requestAnimationFrame(() => {
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  });
+
+  // Case study modal
+  const caseModalOverlay = document.getElementById('caseModalOverlay');
+  const caseModalBody = document.getElementById('caseModalBody');
+
+  function openCaseModal(id) {
+    const tpl = document.getElementById('case-content-' + id);
+    if (!tpl) return;
+    caseModalBody.innerHTML = '';
+    caseModalBody.appendChild(tpl.content.cloneNode(true));
+    caseModalOverlay.classList.add('open');
+    caseModalOverlay.querySelector('.case-modal').scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCaseModal() {
+    caseModalOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  caseModalOverlay.addEventListener('click', (e) => {
+    if (e.target === caseModalOverlay) closeCaseModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && caseModalOverlay.classList.contains('open')) closeCaseModal();
   });
 </script>
 </body>
