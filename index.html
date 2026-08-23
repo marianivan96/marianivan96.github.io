@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marian Ivan — Data, CRM & Marketing Consultant</title>
+<title>Marian Ivan, Data, CRM & Marketing Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -246,7 +246,7 @@
 
   .stat-label { font-size: 12px; color: var(--muted); margin-top: 3px; font-weight: 300; }
 
-  /* ── TICKER — fixed ── */
+  /* ── TICKER fixed ── */
   .ticker-wrap {
     background: var(--accent);
     height: 44px;
@@ -928,7 +928,7 @@
   .stack-items { display: flex; flex-direction: column; gap: 9px; }
 
   .stack-item { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; font-weight: 300; }
-  .stack-item::before { content: '—'; color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.7; }
+  .stack-item::before { content: '·'; color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 10px; opacity: 0.7; }
 
   /* ── ABOUT / CONTACT ── */
   #about { display: block; padding: 0; }
@@ -1091,13 +1091,13 @@
     <div class="hero-eyebrow">Growth · CRM · Marketing Technology</div>
     <h1>Turning messy<br>data into <em>clear<br>decisions.</em></h1>
     <p class="hero-desc">
-      I help organisations replace manual reporting with automated pipelines, build CRM strategies that actually retain customers, and design multichannel journeys that convert — <strong>without a full-time hire.</strong>
+      I help organisations replace manual reporting with automated pipelines, build CRM strategies that actually retain customers, and design multichannel journeys that convert, all <strong>without a full-time hire.</strong>
       <br><br>
       Currently running RevOps and growth across six concurrent programs for a Brussels-based nonprofit, alongside independent projects for scale-ups. Based in Brussels. Working remotely, worldwide.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">See my work →</a>
-      <a href="Marian_Ivan_CV.pdf" download class="btn-secondary">Download CV ↓</a>
+      <a href="https://marianivan96.github.io/Marian_Ivan_CV.pdf" download class="btn-secondary">Download CV ↓</a>
       <a href="#" class="btn-secondary email-link">Book a free audit</a>
     </div>
   </div>
@@ -1147,13 +1147,13 @@
   </div>
 </div>
 
-<!-- TICKER — fixed: label outside mask, track is self-contained -->
+<!-- TICKER fixed: label outside mask, track is self-contained -->
 <div style="background:var(--accent); height:44px; display:flex; align-items:center; overflow:hidden; position:relative;">
   <!-- Static label, sits outside the scroll area -->
   <div class="ticker-label" style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.2em; color:rgba(255,255,255,0.4); text-transform:uppercase; white-space:nowrap; padding:0 24px 0 48px; flex-shrink:0; position:relative; z-index:2;">
     I work with
   </div>
-  <!-- Scrolling track — masked separately via a wrapper -->
+  <!-- Scrolling track, masked separately via a wrapper -->
   <div style="flex:1; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 95%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,black 5%,black 95%,transparent 100%);">
     <div class="ticker-track" style="display:flex; animation:scroll 32s linear infinite; width:max-content;">
       <span class="ticker-item" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:rgba(255,255,255,0.75); text-transform:uppercase; white-space:nowrap; padding:0 32px; display:flex; align-items:center; gap:32px;">NGOs &amp; Nonprofits <span style="width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;flex-shrink:0;"></span></span>
@@ -1181,7 +1181,7 @@
 <section id="projects">
   <div class="section-label">Work</div>
   <h2>Projects that ship.</h2>
-  <p class="section-sub">Real problems, real solutions — not dashboards that nobody looks at.</p>
+  <p class="section-sub">Real problems, real solutions, not dashboards that nobody looks at.</p>
 
   <div class="projects-grid">
 
@@ -1191,7 +1191,7 @@
         <div class="spotlight-badge"><span class="dot"></span>IN BUILD · TRY THE DEMO</div>
         <div class="spotlight-eyebrow">Featured tool · AEO / GEO</div>
         <div class="spotlight-title">AI Search Visibility Checker</div>
-        <p class="spotlight-desc">A free, no-signup tool that shows how often a brand actually appears in AI generated answers, who it's losing ground to, and which sources ChatGPT, Perplexity and Gemini cite instead. Runs fully in the browser, no server, no data collection — you bring your own API key and it never leaves your device.</p>
+        <p class="spotlight-desc">A free, no-signup tool that shows how often a brand actually appears in AI generated answers, who it's losing ground to, and which sources ChatGPT, Perplexity and Gemini cite instead. Runs fully in the browser, no server, no data collection, you bring your own API key and it never leaves your device.</p>
         <div class="spotlight-cta">
           <a href="https://marianivan96.github.io/ai-search-visibility/" target="_blank" class="btn-primary">Try the demo →</a>
           <a href="https://github.com/marianivan96/ai-search-visibility" target="_blank" class="btn-secondary btn-on-dark">View source</a>
@@ -1223,7 +1223,7 @@
         <div class="project-number">01</div><span class="case-badge">CASE STUDY</span>
       </div>
       <div class="project-title">CRM Deal-Data Repair at Scale</div>
-      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk — working alongside the data and engineering leads rather than replacing them.</p>
+      <p class="project-desc">A multi-program HubSpot instance had years of broken deal-to-company associations, quietly corrupting attribution and reporting. Wrote a Python script against the HubSpot API to identify every mismatch, then fixed them in bulk, working alongside the data and engineering leads rather than replacing them.</p>
       <div class="project-outcome">→ 523 mismatched pairs found · 465 fixed via automated API script</div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Data Integrity</span><span class="tag">RevOps</span>
@@ -1249,7 +1249,7 @@
         <div class="project-number">03</div><span class="case-badge">CASE STUDY</span>
       </div>
       <div class="project-title">Healthcare Advocacy Roadmap Microsite</div>
-      <p class="project-desc">A gated five-step microsite with a self-scoring assessment that feeds HubSpot — built after every standard client-side form-capture method failed against HubSpot's Shadow DOM embed. Sole build owner from wireframe to launch and handoff.</p>
+      <p class="project-desc">A gated five-step microsite with a self-scoring assessment that feeds HubSpot, built after every standard client-side form-capture method failed against HubSpot's Shadow DOM embed. Sole build owner from wireframe to launch and handoff.</p>
       <div class="project-outcome">→ 5 step pages + assessment · self-hosted quiz → HubSpot v3 API · tiered follow-up</div>
       <div class="project-tags">
         <span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">HubSpot API</span><span class="tag">JavaScript</span>
@@ -1262,7 +1262,7 @@
         <div class="project-number">04</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Social Intelligence Engine</div>
-      <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation — LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
+      <p class="project-desc">Monitors 70+ sources across global health, impact investing, and social innovation: LinkedIn thought leaders, academic journals, newsletters, podcasts, and org websites. Scrapes everything via Apify and RSS, sends it to Claude AI for thematic analysis, and generates a monthly intelligence briefing with themes, sentiment, notable voices, and actionable recommendations.</p>
       <div class="project-outcome">→ 215+ items · 17 sources · AI-powered monthly briefing in minutes</div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">Claude AI</span><span class="tag">Apify</span><span class="tag">Flask</span><span class="tag">n8n</span><span class="tag">RSS</span><span class="tag">LinkedIn Scraping</span>
@@ -1275,7 +1275,7 @@
         <div class="project-number">05</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">LinkedIn Ads Automated Report</div>
-      <p class="project-desc">An n8n workflow that runs every Monday at 7am — pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
+      <p class="project-desc">An n8n workflow that runs every Monday at 7am, pulls LinkedIn Ads data via Supermetrics, aggregates key metrics, sends it to Claude for analysis, and posts a full performance report with AI commentary directly to Slack.</p>
       <div class="project-outcome">→ Weekly automated · metrics + AI analysis · zero manual work</div>
       <div class="project-tags">
         <span class="tag">n8n</span><span class="tag">Supermetrics</span><span class="tag">Claude API</span><span class="tag">Slack</span><span class="tag">LinkedIn Ads</span>
@@ -1284,9 +1284,11 @@
     </a>
 
     <a href="https://github.com/marianivan96/ga4-ecosystem-report" target="_blank" class="project-card fade-up">
-      <div class="project-number">06</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="project-number">06</div><span class="live-badge">LIVE</span>
+      </div>
       <div class="project-title">GA4 Multi-Ecosystem Report Automation</div>
-      <p class="project-desc">Manually exporting analytics reports every month across 8 separate website ecosystems was taking hours. Built a Python script using the GA4 API that pulls all of it automatically — active users, sessions, channel breakdown, top pages, source/medium — and outputs a self-contained HTML dashboard and Excel file, ready to share.</p>
+      <p class="project-desc">Manually exporting analytics reports every month across 8 separate website ecosystems was taking hours. Built a Python script using the GA4 API that pulls all of it automatically: active users, sessions, channel breakdown, top pages, source/medium, and outputs a self-contained HTML dashboard and Excel file, ready to share.</p>
       <div class="project-outcome">→ 8 ecosystems · full report generated in seconds</div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">GA4 API</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Google Cloud</span><span class="tag">Jinja2</span>
@@ -1299,7 +1301,7 @@
         <div class="project-number">07</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Platform Analytics SQL Library</div>
-      <p class="project-desc">A library of production SQL queries covering the full user funnel — acquisition, activation, engagement, retention, content performance, search behaviour, and growth flags. Built on a real multi-ecosystem platform with 500,000+ users across 8 ecosystems.</p>
+      <p class="project-desc">A library of production SQL queries covering the full user funnel: acquisition, activation, engagement, retention, content performance, search behaviour, and growth flags. Built on a real multi-ecosystem platform with 500,000+ users across 8 ecosystems.</p>
       <div class="project-outcome">→ 8 funnel stages · 25+ queries · MySQL · production-tested</div>
       <div class="project-tags">
         <span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Product Analytics</span><span class="tag">Funnel Analysis</span><span class="tag">Cohort Retention</span><span class="tag">User Behaviour</span>
@@ -1312,7 +1314,7 @@
         <div class="project-number">08</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">HubSpot Duplicate Contact Audit</div>
-      <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types — exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
+      <p class="project-desc">Pulls all contacts from HubSpot via API and flags duplicates across three types: exact email matches, same name with different emails, and same last name and company. Outputs a clean HTML report and Excel file ready to action.</p>
       <div class="project-outcome">→ 29K contacts · 3 duplicate types · HTML + Excel report</div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">HubSpot API</span><span class="tag">Pandas</span><span class="tag">CRM</span>
@@ -1325,7 +1327,7 @@
         <div class="project-number">09</div><span class="live-badge">LIVE</span>
       </div>
       <div class="project-title">Google Reviews & Sentiment Monitor</div>
-      <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report — scorecards, charts, keyword breakdown, and a full review table per brand.</p>
+      <p class="project-desc">Pulls Google reviews for any brand and its competitors via Apify, runs sentiment analysis, and generates a clean HTML report: scorecards, charts, keyword breakdown, and a full review table per brand.</p>
       <div class="project-outcome">→ 300 reviews · 3 brands · sentiment scored in seconds</div>
       <div class="project-tags">
         <span class="tag">Python</span><span class="tag">Apify</span><span class="tag">Pandas</span><span class="tag">Sentiment Analysis</span>
@@ -1338,7 +1340,7 @@
         <div class="project-number">10</div><span class="case-badge">CASE STUDY</span>
       </div>
       <div class="project-title">B2B LinkedIn Campaign on a Lean Budget</div>
-      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline — proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
+      <p class="project-desc">Designed and launched a five-audience LinkedIn campaign for a B2B network client, with a full flight schedule and tight budget discipline, proof that reach doesn't require a big-brand spend when targeting and sequencing are done right.</p>
       <div class="project-outcome">→ ~338K combined reach · €3,000 total budget · 5 audiences</div>
       <div class="project-tags">
         <span class="tag">LinkedIn Ads</span><span class="tag">B2B</span><span class="tag">Audience Strategy</span><span class="tag">Paid Media</span>
@@ -1356,8 +1358,8 @@
 
   <div class="services-intro">
     <div class="services-intro-text">
-      <p>I work project-by-project with teams who need data to actually work for them — not consultants who deliver a slide deck and disappear. Whether you need a one-off CRM cleanup, a reporting pipeline that runs itself, or a strategy for what to measure in the first place, I can help.</p>
-      <p>Over a decade across CRM operations, data analysis, and marketing automation — from 30-million-record databases to small NGOs getting their first HubSpot setup, to scale-ups that need one person who can cover growth, RevOps, and analytics at once. Remote-first, but also available in person in Brussels.</p>
+      <p>I work project-by-project with teams who need data to actually work for them, not consultants who deliver a slide deck and disappear. Whether you need a one-off CRM cleanup, a reporting pipeline that runs itself, or a strategy for what to measure in the first place, I can help.</p>
+      <p>Over a decade across CRM operations, data analysis, and marketing automation, from 30-million-record databases to small NGOs getting their first HubSpot setup, to scale-ups that need one person who can cover growth, RevOps, and analytics at once. Remote-first, but also available in person in Brussels.</p>
     </div>
     <div class="services-callout">
       <div class="callout-label">How to start</div>
@@ -1422,42 +1424,42 @@
       <span class="service-new-tag">NEW</span>
       <span class="service-icon">🔎</span>
       <div class="service-title">AI Search & GEO/AEO Visibility</div>
-      <p class="service-desc">Audit how a brand actually shows up in ChatGPT, Perplexity, Gemini and AI Overviews — visibility score, share of voice against named competitors, and a citation gap analysis showing which sources those engines trust instead of you. Delivered as a report with a prioritised action plan.</p>
+      <p class="service-desc">Audit how a brand actually shows up in ChatGPT, Perplexity, Gemini and AI Overviews: visibility score, share of voice against named competitors, and a citation gap analysis showing which sources those engines trust instead of you. Delivered as a report with a prioritised action plan.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">📈</span>
       <div class="service-title">Analytics, Reporting & Experimentation</div>
-      <p class="service-desc">GA4 setup, custom dashboards, automated monthly reports, and multi-channel attribution — plus the A/B testing that turns those dashboards into decisions, not just charts.</p>
+      <p class="service-desc">GA4 setup, custom dashboards, automated monthly reports, and multi-channel attribution, plus the A/B testing that turns those dashboards into decisions, not just charts.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🔗</span>
       <div class="service-title">CRM Strategy & Management</div>
-      <p class="service-desc">Full CRM ownership — architecture, segmentation, contact enrichment, data hygiene, and lifecycle workflows. HubSpot specialist. From 30M-record databases to first-time setups, including large-scale deal and contact data repairs.</p>
+      <p class="service-desc">Full CRM ownership: architecture, segmentation, contact enrichment, data hygiene, and lifecycle workflows. HubSpot specialist. From 30M-record databases to first-time setups, including large-scale deal and contact data repairs.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🗺️</span>
       <div class="service-title">Customer Journey Design</div>
-      <p class="service-desc">Map, build, and optimise the full customer lifecycle — from acquisition through retention. Trigger-based flows, behavioural segmentation, and retention sequences that run without manual intervention.</p>
+      <p class="service-desc">Map, build, and optimise the full customer lifecycle, from acquisition through retention. Trigger-based flows, behavioural segmentation, and retention sequences that run without manual intervention.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">📡</span>
       <div class="service-title">Multichannel Campaign Management</div>
-      <p class="service-desc">Coordinated campaigns across email, SMS, push, and paid — with consistent segmentation and messaging logic across all channels. Strategy, execution, and measurement in one.</p>
+      <p class="service-desc">Coordinated campaigns across email, SMS, push, and paid, with consistent segmentation and messaging logic across all channels. Strategy, execution, and measurement in one.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🐍</span>
       <div class="service-title">Python Scripts & API Work</div>
-      <p class="service-desc">Custom scripts that connect your tools — GA4, HubSpot, GTM, internal databases — and turn raw data into actionable outputs.</p>
+      <p class="service-desc">Custom scripts that connect your tools: GA4, HubSpot, GTM, internal databases, turning raw data into actionable outputs.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">🏷️</span>
       <div class="service-title">GTM & Tracking Audits</div>
-      <p class="service-desc">Full audits of your Google Tag Manager setup — catching broken tags, duplicate events, and gaps in conversion tracking before they cost you.</p>
+      <p class="service-desc">Full audits of your Google Tag Manager setup, catching broken tags, duplicate events, and gaps in conversion tracking before they cost you.</p>
     </div>
     <div class="service-card fade-up">
       <span class="service-icon">📋</span>
       <div class="service-title">Data Strategy & Consulting</div>
-      <p class="service-desc">Helping clients build a data culture from scratch — KPI frameworks, tool selection, reporting structures, and AI-assisted lead and buyer-intent scoring.</p>
+      <p class="service-desc">Helping clients build a data culture from scratch: KPI frameworks, tool selection, reporting structures, and AI-assisted lead and buyer-intent scoring.</p>
     </div>
   </div>
 </section>
@@ -1527,7 +1529,7 @@
     </div>
     <div class="section-label">Contact</div>
     <h2>Let's work together.</h2>
-    <p class="section-sub">Open to project-based work — CRM strategy, multichannel campaigns, data pipelines, or all three. One-off projects or ongoing partnerships. Remote or Brussels.</p>
+    <p class="section-sub">Open to project-based work: CRM strategy, multichannel campaigns, data pipelines, or all three. One-off projects or ongoing partnerships. Remote or Brussels.</p>
     <div class="contact-links">
       <a href="#" class="contact-link email-link">
         <span class="contact-link-icon">@</span>
@@ -1541,7 +1543,7 @@
         <span class="contact-link-icon">in</span>
         linkedin.com/in/marian-ivan96
       </a>
-      <a href="Marian_Ivan_CV.pdf" download class="contact-link">
+      <a href="https://marianivan96.github.io/Marian_Ivan_CV.pdf" download class="contact-link">
         <span class="contact-link-icon">↓</span>
         Download CV (PDF)
       </a>
@@ -1600,7 +1602,7 @@
       <p><strong>The step pages.</strong> Every step page follows one repeated structure, which is what makes five pages feel like one tool instead of five microsites:</p>
       <ul>
         <li>A three-column what/how/tool block at the top, so a visitor sees the objective, the method and the instrument for that step before scrolling.</li>
-        <li>A horizontally scrolling row of how-to guide cards, each with a downloadable PDF. Horizontal scroll here was a deliberate call — it keeps the guides visible as a set instead of burying step content under a vertical stack of attachments.</li>
+        <li>A horizontally scrolling row of how-to guide cards, each with a downloadable PDF. Horizontal scroll here was a deliberate call: it keeps the guides visible as a set instead of burying step content under a vertical stack of attachments.</li>
         <li>Real screenshots of the tools being discussed, not stock imagery. If a step tells you to use something, the page shows you what it actually looks like.</li>
         <li>An additional resources block, then previous/next navigation, so the roadmap can be walked in sequence or dipped into at any point.</li>
       </ul>
@@ -1657,14 +1659,14 @@
 
       <div class="case-modal-eyebrow">Case Study</div>
       <h2 class="case-modal-title" id="caseModalTitle">CRM Deal-Data Repair at Scale</h2>
-      <p class="case-modal-lede">556 deals duplicated forward with their associations stripped — 465 repaired automatically, 58 flagged rather than guessed at, every write preceded by a dry run and backed by a revert path.</p>
+      <p class="case-modal-lede">556 deals duplicated forward with their associations stripped. 465 repaired automatically, 58 flagged rather than guessed at, every write preceded by a dry run and backed by a revert path.</p>
 
       <div class="case-meta">
         <div class="case-meta-item"><div class="case-meta-label">Context</div><div class="case-meta-value">A multi-program HubSpot instance, prior year deals rolled forward into the new year</div></div>
         <div class="case-meta-item"><div class="case-meta-label">My role</div><div class="case-meta-value">Built and ran the repair pipeline, from triage through remediation and reporting</div></div>
         <div class="case-meta-item"><div class="case-meta-label">Scale</div><div class="case-meta-value">556 deals affected, 523 processed</div></div>
         <div class="case-meta-item"><div class="case-meta-label">Stack</div><div class="case-meta-value">Python, HubSpot private app API</div></div>
-        <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Status</div><div class="case-meta-value">Complete — backup snapshot and revert script retained, results logged per run</div></div>
+        <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Status</div><div class="case-meta-value">Complete, backup snapshot and revert script retained, results logged per run</div></div>
       </div>
 
       <h3>Context</h3>
@@ -1692,12 +1694,12 @@
       <p>Blank data is visibly broken. Somebody notices and asks. Wrongly populated data is invisibly broken, and it gets trusted, reported on, and acted upon. The entire build had to be structured around the possibility of being wrong at scale. So every run went through the same rig:</p>
       <ul>
         <li>Dry run before any live write, printing exactly what would change and on which records.</li>
-        <li>Explicit typed confirmation in the terminal before switching to live mode — not a keypress, a typed string, because the cost of an accidental confirmation here is 500 records.</li>
+        <li>Explicit typed confirmation in the terminal before switching to live mode, not a keypress but a typed string, because the cost of an accidental confirmation here is 500 records.</li>
         <li>Full backup snapshot taken before writing.</li>
         <li>A revert script kept on hand, written before it was needed rather than after.</li>
         <li>A results log after every run, so the outcome of each pass is auditable rather than remembered.</li>
       </ul>
-      <div class="case-callout">The other half of the hard part is knowing when not to write. 58 of the 523 deals could not be repaired because their prior-year source deal also lacked a company association. There was nothing to copy. Those 58 were flagged back to the data owner with the reason attached, rather than resolved by inference, fuzzy matching or best guess. A repair script that guesses is not a repair script — it is a second data quality incident wearing the first one's clothes.</div>
+      <div class="case-callout">The other half of the hard part is knowing when not to write. 58 of the 523 deals could not be repaired because their prior-year source deal also lacked a company association. There was nothing to copy. Those 58 were flagged back to the data owner with the reason attached, rather than resolved by inference, fuzzy matching or best guess. A repair script that guesses is not a repair script. It is a second data quality incident wearing the first one's clothes.</div>
 
       <h3>Outcome</h3>
       <ul>
@@ -1728,7 +1730,7 @@
         <div class="case-meta-item"><div class="case-meta-label">Scale</div><div class="case-meta-value">59 closed-won deals, 35 companies, 6 program pipelines, 188 notes, ~9,000 logged emails</div></div>
         <div class="case-meta-item"><div class="case-meta-label">Result</div><div class="case-meta-value">51 pairs identified, 49 scored into four tiers, ~€2.68M in active deal value</div></div>
         <div class="case-meta-item"><div class="case-meta-label">Deliverable</div><div class="case-meta-value">Five-tab Excel workbook, live formulas, ranked summary plus full rationale and source quote per row</div></div>
-        <div class="case-meta-item"><div class="case-meta-label">Runtime</div><div class="case-meta-value">~345 API calls, ~4 minutes — down from 8,000+ calls and hours</div></div>
+        <div class="case-meta-item"><div class="case-meta-label">Runtime</div><div class="case-meta-value">~345 API calls, ~4 minutes, down from 8,000+ calls and hours</div></div>
         <div class="case-meta-item" style="grid-column:1/-1;"><div class="case-meta-label">Stack</div><div class="case-meta-value">Python, HubSpot batch read API, openpyxl</div></div>
       </div>
 
@@ -1762,7 +1764,7 @@
 
       <h4>The deliverable: a five-tab Excel workbook, generated with openpyxl</h4>
       <ul>
-        <li><strong>Tab 1, Ranked Summary.</strong> Rank, score out of 100, tier, amount, key contact and a one-line signal per row — the tab someone reads in a meeting without needing anything explained to them.</li>
+        <li><strong>Tab 1, Ranked Summary.</strong> Rank, score out of 100, tier, amount, key contact and a one-line signal per row, the tab someone reads in a meeting without needing anything explained to them.</li>
         <li><strong>Supporting tabs.</strong> Full rationale and the source quote for every row, so any number on tab 1 can be traced back to the evidence that produced it.</li>
       </ul>
       <p>It was built as an instrument rather than a document:</p>
@@ -1830,7 +1832,7 @@
 
       <h3>The constraint that shaped everything</h3>
       <p>Two platform rules dictated how the audiences could be built, and both had to be found the hard way.</p>
-      <p><strong>Member Groups are unavailable for EU and EMEA targeting</strong> under LinkedIn's DSA compliance rules. Groups are one of the sharpest intent proxies the platform offers for a niche professional audience. Losing that facet across half the geographic footprint means the EMEA audience cannot simply mirror the US one — it has to be built from different components to reach a comparable person.</p>
+      <p><strong>Member Groups are unavailable for EU and EMEA targeting</strong> under LinkedIn's DSA compliance rules. Groups are one of the sharpest intent proxies the platform offers for a niche professional audience. Losing that facet across half the geographic footprint means the EMEA audience cannot simply mirror the US one. It has to be built from different components to reach a comparable person.</p>
       <p><strong>Job Titles cannot be ANDed with Job Seniority or Job Function.</strong> The permitted combinations are Job Titles plus Company Industries, or Job Function plus Seniority. In practice that means you cannot ask for senior people holding specific titles. You choose which axis of precision you keep, then pair it with the one facet the platform allows alongside it.</p>
       <div class="case-callout">Neither of these presented itself cleanly up front. They came out of direct trial and error in Campaign Manager, building combinations and watching them get rejected or watching estimated reach collapse, until the map of what was actually permitted was clear. On a €3,000 budget that discovery had to happen before spend, not during it.</div>
 
@@ -1843,7 +1845,7 @@
       <p><strong>Around 338K combined reach across 5 audience and ad combinations, on €3,000 total.</strong></p>
       <p>Early performance across the account sits at 0.98% CTR and €32.96 CPM. These are in-flight figures, an early read rather than closed-campaign results, and no cost per lead is quoted here because that number is not settled.</p>
       <p>The segment-level result is the one worth acting on: the CMO persona segment is running at 2.98% CTR, roughly three times the campaign-level rate and well above account average. That is the finding that makes the rest of the budget allocatable instead of evenly spread, because it identifies which persona inside a permitted targeting combination is actually carrying the response.</p>
-      <p>The wider takeaway from the build is that the targeting constraints were not an obstacle to the strategy — they were the strategy. Once Member Groups and title-plus-seniority stacking were off the table, audience quality had to come from choosing the right permitted pairings and pacing them properly. On this budget, structure was the only lever that mattered.</p>
+      <p>The wider takeaway from the build is that the targeting constraints were not an obstacle to the strategy. They were the strategy. Once Member Groups and title-plus-seniority stacking were off the table, audience quality had to come from choosing the right permitted pairings and pacing them properly. On this budget, structure was the only lever that mattered.</p>
 
       <h3>Stack</h3>
       <div class="project-tags">
@@ -1853,7 +1855,7 @@
 </template>
 
 <script>
-  // Assemble email in JS — immune to Cloudflare email obfuscation
+  // Assemble email in JS, immune to Cloudflare email obfuscation
   const u = 'ivanmarian96';
   const d = 'gmail' + '.' + 'com';
   const email = u + '\u0040' + d;
