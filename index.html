@@ -205,6 +205,9 @@
 
   .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
+  .btn-on-dark { border-color: rgba(255,255,255,0.18); color: #e8e6e0; }
+  .btn-on-dark:hover { border-color: var(--gold); color: var(--gold); }
+
   /* ── HERO RIGHT ── */
   .hero-right {
     display: flex;
@@ -969,15 +972,15 @@
   <div class="projects-grid">
 
     <!-- SPOTLIGHT: AI Search Visibility Checker -->
-    <a href="https://marianivan96.github.io/ai-search-visibility/" target="_blank" class="project-spotlight fade-up">
+    <div class="project-spotlight fade-up">
       <div>
         <div class="spotlight-badge"><span class="dot"></span>IN BUILD · TRY THE DEMO</div>
         <div class="spotlight-eyebrow">Featured tool · AEO / GEO</div>
         <div class="spotlight-title">AI Search Visibility Checker</div>
         <p class="spotlight-desc">A free, no-signup tool that shows how often a brand actually appears in AI generated answers, who it's losing ground to, and which sources ChatGPT, Perplexity and Gemini cite instead. Runs fully in the browser, no server, no data collection — you bring your own API key and it never leaves your device.</p>
         <div class="spotlight-cta">
-          <span class="btn-primary">Try the demo →</span>
-          <a href="https://github.com/marianivan96/ai-search-visibility" target="_blank" class="btn-secondary" style="border-color: rgba(255,255,255,0.15); color:#e8e6e0;">View source</a>
+          <a href="https://marianivan96.github.io/ai-search-visibility/" target="_blank" class="btn-primary">Try the demo →</a>
+          <a href="https://github.com/marianivan96/ai-search-visibility" target="_blank" class="btn-secondary btn-on-dark">View source</a>
         </div>
       </div>
       <div class="spotlight-panel">
@@ -999,7 +1002,7 @@
           <span class="spotlight-metric-value">ChatGPT · Perplexity · Gemini · AI Overviews</span>
         </div>
       </div>
-    </a>
+    </div>
 
     <a href="https://github.com/marianivan96/ga4-ecosystem-report" target="_blank" class="project-card fade-up">
       <div class="project-number">01</div>
